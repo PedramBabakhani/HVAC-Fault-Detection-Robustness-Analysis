@@ -19,12 +19,12 @@
 #   - MAX_TAB_TRAIN caps tabular training samples (keeps SVM fast)
 #   - PLOT_ONLY_CLEAN_AND_WORST reduces plotting overhead
 #
-# SCIENTIFIC FEATURE IMPORTANCE (ONE METHOD FOR ALL):
-#   ✅ Permutation Importance on SAME held-out test set
-#   ✅ SAME metric for ALL models (macro-F1 by default)
-#   ✅ NO CLIPPING (negatives preserved)
-#   ✅ mean ± std over N repeats (stability + honesty)
-#   ✅ signed plot around zero line
+# SCIENTIFIC FEATURE IMPORTANCE (ONE METHOD FOR ALL) — SAGE-style Shapley Global Importance:
+#   ✅ ONE universal method for ALL models: SAGE-like Monte Carlo Shapley on performance
+#   ✅ Works for trees, linear, deep seq models (model-agnostic)
+#   ✅ No "shuffle time" nonsense: time order preserved (we MASK features, we do NOT permute timesteps)
+#   ✅ Missing-feature operator uses TRAIN distribution sampling (marginal) or mean (choose)
+#   ✅ Returns signed contributions (can be negative) + std across permutations (uncertainty)
 #
 # OUTPUTS:
 #   ✅ ./fdd_out/results_all.csv
@@ -89,14 +89,16 @@ COMPUTE_FEATURE_IMPORTANCE = True
 SHOW_FI_INLINE = True
 FI_TOPK = 25
 
-# ✅ ONE FAIR METHOD FOR ALL: Permutation importance
-FI_METRIC = "macro_f1"       # "macro_f1" or "accuracy" (choose one and keep it fixed)
-FI_N_REPEATS = 5             # increase to 10+ for more stability if runtime allows
+# ✅ ONE FAIR METHOD FOR ALL: SAGE-style Shapley Global Importance (Monte Carlo)
+FI_METRIC = "macro_f1"          # "macro_f1" or "accuracy" (choose one and keep it fixed)
 FI_SEED = 123
 
-# For sequence FI speed
-MAX_SEQ_IMPORTANCE_SAMPLES = 3000
-MAX_SEQ_FEATURES_FOR_FI = None  # None = all, or e.g. 30
+# SAGE Monte Carlo knobs
+FI_SAGE_N_PERMS = 20            # number of random feature orderings (Shapley Monte Carlo). 20-50 ok.
+FI_SAGE_MASKING = "sample"      # "sample" (recommended) or "mean"
+MAX_FI_TEST_SAMPLES_TAB = 5000  # cap test samples for FI to keep runtime sane
+MAX_FI_TEST_SAMPLES_SEQ = 3000  # cap seq samples for FI (already had similar)
+MAX_FI_FEATURES = None          # None = all features; or set int (e.g., 40) to reduce runtime
 
 # Include clean baseline + degradations
 levels = {
@@ -202,38 +204,38 @@ def show_confmat(cm, class_names, title, show_inline=True):
         plt.show()
     plt.close(fig)
 
-def show_feature_importance_signed(feat_names, mean_drop, std_drop, title, topk=25,
+def show_feature_importance_signed(feat_names, mean_imp, std_imp, title, topk=25,
                                    show_inline=True, rank_by="abs"):
     """
-    Scientifically honest permutation importance:
-      - shows signed mean drop (can be negative)
-      - error bars (std over repeats)
+    Scientifically honest global importance:
+      - signed mean contribution (can be negative)
+      - error bars (std over MC perms)
       - ranks by abs(mean) by default so strong negatives are not hidden
     """
-    if mean_drop is None or feat_names is None or len(feat_names) == 0:
+    if mean_imp is None or feat_names is None or len(feat_names) == 0:
         return
-    if std_drop is None:
-        std_drop = np.zeros_like(mean_drop, dtype=float)
+    if std_imp is None:
+        std_imp = np.zeros_like(mean_imp, dtype=float)
 
     df = pd.DataFrame({
         "feature": feat_names,
-        "mean_drop": mean_drop,
-        "std_drop": std_drop
+        "mean": mean_imp,
+        "std": std_imp
     })
 
     if rank_by == "abs":
-        df["rank_key"] = df["mean_drop"].abs()
+        df["rank_key"] = df["mean"].abs()
         df = df.sort_values("rank_key", ascending=False)
     else:
-        df = df.sort_values("mean_drop", ascending=False)
+        df = df.sort_values("mean", ascending=False)
 
     top = df.head(topk).iloc[::-1]  # reverse for barh
 
     fig, ax = plt.subplots(figsize=(10, 7))
-    ax.barh(top["feature"], top["mean_drop"], xerr=top["std_drop"])
+    ax.barh(top["feature"], top["mean"], xerr=top["std"])
     ax.axvline(0.0, linewidth=1)
     ax.set_title(title)
-    ax.set_xlabel(f"Permutation importance: baseline {FI_METRIC} − permuted {FI_METRIC} (mean ± std)")
+    ax.set_xlabel(f"SAGE-style Shapley global importance (mean ± std) on {FI_METRIC}")
     fig.tight_layout()
     if show_inline:
         plt.show()
@@ -265,16 +267,16 @@ def add_confmat_rows(src, building, label_mode, tag_base, model_name, manip_name
                 })
 
 def add_feature_importance_rows(src, building, label_mode, tag_base, model_name, manip_name, lvl,
-                               feat_names, mean_drop, std_drop, method):
+                               feat_names, mean_imp, std_imp, method):
     """
-    Stores signed mean_drop (can be negative) + std. No clipping. Scientific.
+    Stores signed mean importance (can be negative) + std. No clipping.
     """
-    if mean_drop is None or feat_names is None:
+    if mean_imp is None or feat_names is None:
         return
-    if std_drop is None:
-        std_drop = np.zeros_like(mean_drop, dtype=float)
+    if std_imp is None:
+        std_imp = np.zeros_like(mean_imp, dtype=float)
 
-    for f, mu, sd in zip(feat_names, mean_drop, std_drop):
+    for f, mu, sd in zip(feat_names, mean_imp, std_imp):
         FEATURE_IMPORTANCE_ROWS.append({
             "source_dataset": src,
             "building": building,
@@ -454,7 +456,7 @@ def torch_predict_labels(model, X, batch_size=512):
     return np.concatenate(preds, axis=0)
 
 # -----------------------------
-# ✅ ONE FAIR METHOD: Permutation Importance for ALL models
+# ✅ ONE UNIVERSAL METHOD: SAGE-style Shapley Global Importance (Monte Carlo)
 # -----------------------------
 def metric_macro_f1(y_true, y_pred):
     return f1_score(y_true, y_pred, average="macro", zero_division=0)
@@ -467,66 +469,132 @@ def get_fi_metric_fn():
         return metric_accuracy
     return metric_macro_f1
 
-def perm_importance_tabular(predict_fn, X, y, metric_fn, n_repeats=5, seed=123):
-    """
-    Permutation importance for TABULAR models.
-    Returns mean_drop, std_drop per feature (signed).
-    """
-    rng = np.random.default_rng(seed)
-    base_pred = predict_fn(X)
-    base_score = metric_fn(y, base_pred)
+def _subsample_xy_tabular(X, y, max_n, rng):
+    if max_n is None or len(X) <= max_n:
+        return X, y
+    idx = rng.choice(len(X), size=max_n, replace=False)
+    return X[idx], y[idx]
 
-    drops = np.zeros((n_repeats, X.shape[1]), dtype=float)
-    for r in range(n_repeats):
-        for j in range(X.shape[1]):
-            Xp = X.copy()
-            idx = rng.permutation(len(Xp))
-            Xp[:, j] = Xp[idx, j]
-            predp = predict_fn(Xp)
-            scorep = metric_fn(y, predp)
-            drops[r, j] = base_score - scorep
-    return drops.mean(axis=0), drops.std(axis=0)
+def _subsample_xy_seq(Xseq, yseq, max_n, rng):
+    if max_n is None or len(Xseq) <= max_n:
+        return Xseq, yseq
+    idx = rng.choice(len(Xseq), size=max_n, replace=False)
+    return Xseq[idx], yseq[idx]
 
-def perm_importance_sequence(predict_fn_seq, Xseq, yseq, metric_fn,
-                            n_repeats=5, seed=123, max_samples=3000, max_features=None):
-    """
-    Permutation importance for SEQUENCE models (X: N,T,F).
-    Shuffles each feature across SAMPLES (keeps within-window temporal structure intact).
-    Returns used_feature_indices, mean_drop, std_drop (signed).
-    """
-    if len(Xseq) == 0:
-        return np.array([], dtype=int), None, None
-
-    rng = np.random.default_rng(seed)
-
-    if max_samples is not None and len(Xseq) > max_samples:
-        idx = rng.choice(len(Xseq), size=max_samples, replace=False)
-        Xuse = Xseq[idx].copy()
-        yuse = yseq[idx].copy()
+def _mask_all_features_tabular(X, X_train, feat_idx, rng, masking="sample"):
+    Xm = X.copy()
+    if masking == "mean":
+        col_mean = X_train.mean(axis=0)
+        for j in feat_idx:
+            Xm[:, j] = col_mean[j]
+    elif masking == "sample":
+        for j in feat_idx:
+            src = X_train[:, j]
+            Xm[:, j] = rng.choice(src, size=len(Xm), replace=True)
     else:
-        Xuse = Xseq.copy()
-        yuse = yseq.copy()
+        raise ValueError("FI_SAGE_MASKING must be one of: 'sample', 'mean'")
+    return Xm
 
-    base_pred = predict_fn_seq(Xuse)
-    base_score = metric_fn(yuse, base_pred)
+def _mask_all_features_sequence(Xseq, X_train_tab, feat_idx, rng, masking="sample"):
+    Xm = Xseq.copy()
+    if masking == "mean":
+        col_mean = X_train_tab.mean(axis=0)
+        for j in feat_idx:
+            Xm[:, :, j] = col_mean[j]
+    elif masking == "sample":
+        for j in feat_idx:
+            src = X_train_tab[:, j]
+            repl = rng.choice(src, size= Xm.shape[0], replace=True)  # one value per sequence
+            Xm[:, :, j] = repl[:, None]  # broadcast across time
+    else:
+        raise ValueError("FI_SAGE_MASKING must be one of: 'sample', 'mean'")
+    return Xm
 
-    F = Xuse.shape[2]
+def sage_importance_tabular(predict_fn, X_test, y_test, X_train, metric_fn,
+                            n_perms=20, seed=123, max_samples=5000, max_features=None,
+                            masking="sample"):
+    """
+    SAGE-style Monte Carlo Shapley global importance:
+      - defines "missing feature" via masking operator using TRAIN distribution
+      - estimates Shapley contribution of each feature to model performance
+    Returns mean_contrib, std_contrib (signed).
+    """
+    rng = np.random.default_rng(seed)
+    Xs, ys = _subsample_xy_tabular(X_test, y_test, max_samples, rng)
+
+    F = Xs.shape[1]
     feat_idx = np.arange(F)
     if max_features is not None:
         feat_idx = feat_idx[:min(max_features, F)]
 
-    drops = np.zeros((n_repeats, len(feat_idx)), dtype=float)
+    contrib = np.zeros((n_perms, len(feat_idx)), dtype=float)
 
-    for r in range(n_repeats):
-        for k, j in enumerate(feat_idx):
-            Xp = Xuse.copy()
-            perm = rng.permutation(Xp.shape[0])
-            Xp[:, :, j] = Xp[perm, :, j]
-            predp = predict_fn_seq(Xp)
-            scorep = metric_fn(yuse, predp)
-            drops[r, k] = base_score - scorep
+    for p in range(n_perms):
+        order = rng.permutation(len(feat_idx))
+        # mask all selected features
+        Xmasked = _mask_all_features_tabular(Xs, X_train, feat_idx, rng, masking=masking)
+        pred0 = predict_fn(Xmasked)
+        prev_score = metric_fn(ys, pred0)
 
-    return feat_idx, drops.mean(axis=0), drops.std(axis=0)
+        Xcurr = Xmasked
+        for step_pos in order:
+            j = feat_idx[step_pos]
+            k = np.where(feat_idx == j)[0][0]  # index in contrib vector
+
+            # unmask feature j: restore original column from Xs
+            Xcurr[:, j] = Xs[:, j]
+            pred1 = predict_fn(Xcurr)
+            score1 = metric_fn(ys, pred1)
+
+            # marginal contribution when adding feature j to current coalition
+            contrib[p, k] = score1 - prev_score
+            prev_score = score1
+
+    return contrib.mean(axis=0), contrib.std(axis=0)
+
+def sage_importance_sequence(predict_fn_seq, Xseq_test, yseq_test, X_train_tab, metric_fn,
+                             n_perms=20, seed=123, max_samples=3000, max_features=None,
+                             masking="sample"):
+    """
+    SAGE-style Monte Carlo Shapley global importance for sequence models (X: N,T,F):
+      - masks a feature across ALL timesteps (preserves temporal order)
+      - missing feature is imputed using TRAIN distribution ("sample" or "mean")
+    Returns used_feature_indices, mean_contrib, std_contrib.
+    """
+    rng = np.random.default_rng(seed)
+    Xs, ys = _subsample_xy_seq(Xseq_test, yseq_test, max_samples, rng)
+
+    if len(Xs) == 0:
+        return np.array([], dtype=int), None, None
+
+    F = Xs.shape[2]
+    feat_idx = np.arange(F)
+    if max_features is not None:
+        feat_idx = feat_idx[:min(max_features, F)]
+
+    contrib = np.zeros((n_perms, len(feat_idx)), dtype=float)
+
+    for p in range(n_perms):
+        order = rng.permutation(len(feat_idx))
+
+        Xmasked = _mask_all_features_sequence(Xs, X_train_tab, feat_idx, rng, masking=masking)
+        pred0 = predict_fn_seq(Xmasked)
+        prev_score = metric_fn(ys, pred0)
+
+        Xcurr = Xmasked
+        for step_pos in order:
+            j = feat_idx[step_pos]
+            k = np.where(feat_idx == j)[0][0]
+
+            # unmask feature j across all timesteps by restoring original trajectories
+            Xcurr[:, :, j] = Xs[:, :, j]
+            pred1 = predict_fn_seq(Xcurr)
+            score1 = metric_fn(ys, pred1)
+
+            contrib[p, k] = score1 - prev_score
+            prev_score = score1
+
+    return feat_idx, contrib.mean(axis=0), contrib.std(axis=0)
 
 def make_torch_predict_fn(model):
     return lambda X: torch_predict_labels(model, X, batch_size=BATCH)
@@ -742,7 +810,7 @@ def run_one_building(item):
 
     rows = []
     metric_fn = get_fi_metric_fn()
-    fi_method = f"permutation_drop_{FI_METRIC}_mean_std"
+    fi_method = f"sage_mc_{FI_SAGE_MASKING}_{FI_METRIC}_mean_std__perms={FI_SAGE_N_PERMS}"
 
     for manip_name, lvls in levels.items():
         for lvl in lvls:
@@ -801,22 +869,32 @@ def run_one_building(item):
                     show_inline=True
                 )
 
-            # ✅ ONE METHOD FI: permutation (signed, mean±std)
+            # ✅ ONE METHOD FI: SAGE-style Shapley global importance
             if COMPUTE_FEATURE_IMPORTANCE:
-                mean_drop, std_drop = perm_importance_tabular(
+                mean_imp, std_imp = sage_importance_tabular(
                     predict_fn=lambda Z: svm.predict(Z),
-                    X=Xte_m, y=yte_m,
+                    X_test=Xte_m, y_test=yte_m,
+                    X_train=Xtr_tab,
                     metric_fn=metric_fn,
-                    n_repeats=FI_N_REPEATS,
-                    seed=FI_SEED
+                    n_perms=FI_SAGE_N_PERMS,
+                    seed=FI_SEED,
+                    max_samples=MAX_FI_TEST_SAMPLES_TAB,
+                    max_features=MAX_FI_FEATURES,
+                    masking=FI_SAGE_MASKING
                 )
+                # if we limited features, we must align sensor names
+                if MAX_FI_FEATURES is not None:
+                    used_names = sensors[:min(MAX_FI_FEATURES, len(sensors))]
+                else:
+                    used_names = sensors
+
                 add_feature_importance_rows(src, building, LABEL_MODE, tag_base, "LinearSVM", manip_name, lvl,
-                                            sensors, mean_drop, std_drop, method=fi_method)
+                                            used_names, mean_imp, std_imp, method=fi_method)
 
                 if should_plot(manip_name, lvl) and SHOW_FI_INLINE:
                     show_feature_importance_signed(
-                        sensors, mean_drop, std_drop,
-                        title=f"Permutation FI | {tag_base} | LinearSVM | {manip_name}={lvl} | metric={FI_METRIC}",
+                        used_names, mean_imp, std_imp,
+                        title=f"SAGE FI | {tag_base} | LinearSVM | {manip_name}={lvl} | metric={FI_METRIC}",
                         topk=FI_TOPK,
                         show_inline=True,
                         rank_by="abs"
@@ -860,22 +938,31 @@ def run_one_building(item):
                     show_inline=True
                 )
 
-            # ✅ permutation FI
+            # ✅ SAGE FI
             if COMPUTE_FEATURE_IMPORTANCE:
-                mean_drop, std_drop = perm_importance_tabular(
+                mean_imp, std_imp = sage_importance_tabular(
                     predict_fn=lambda Z: rf.predict(Z),
-                    X=Xte_m, y=yte_m,
+                    X_test=Xte_m, y_test=yte_m,
+                    X_train=Xtr_tab,
                     metric_fn=metric_fn,
-                    n_repeats=FI_N_REPEATS,
-                    seed=FI_SEED
+                    n_perms=FI_SAGE_N_PERMS,
+                    seed=FI_SEED,
+                    max_samples=MAX_FI_TEST_SAMPLES_TAB,
+                    max_features=MAX_FI_FEATURES,
+                    masking=FI_SAGE_MASKING
                 )
+                if MAX_FI_FEATURES is not None:
+                    used_names = sensors[:min(MAX_FI_FEATURES, len(sensors))]
+                else:
+                    used_names = sensors
+
                 add_feature_importance_rows(src, building, LABEL_MODE, tag_base, "RF", manip_name, lvl,
-                                            sensors, mean_drop, std_drop, method=fi_method)
+                                            used_names, mean_imp, std_imp, method=fi_method)
 
                 if should_plot(manip_name, lvl) and SHOW_FI_INLINE:
                     show_feature_importance_signed(
-                        sensors, mean_drop, std_drop,
-                        title=f"Permutation FI | {tag_base} | RF | {manip_name}={lvl} | metric={FI_METRIC}",
+                        used_names, mean_imp, std_imp,
+                        title=f"SAGE FI | {tag_base} | RF | {manip_name}={lvl} | metric={FI_METRIC}",
                         topk=FI_TOPK,
                         show_inline=True,
                         rank_by="abs"
@@ -928,22 +1015,31 @@ def run_one_building(item):
                     show_inline=True
                 )
 
-            # ✅ permutation FI
+            # ✅ SAGE FI
             if COMPUTE_FEATURE_IMPORTANCE:
-                mean_drop, std_drop = perm_importance_tabular(
+                mean_imp, std_imp = sage_importance_tabular(
                     predict_fn=lambda Z: xgb.predict(Z),
-                    X=Xte_m, y=yte_m,
+                    X_test=Xte_m, y_test=yte_m,
+                    X_train=Xtr_tab,
                     metric_fn=metric_fn,
-                    n_repeats=FI_N_REPEATS,
-                    seed=FI_SEED
+                    n_perms=FI_SAGE_N_PERMS,
+                    seed=FI_SEED,
+                    max_samples=MAX_FI_TEST_SAMPLES_TAB,
+                    max_features=MAX_FI_FEATURES,
+                    masking=FI_SAGE_MASKING
                 )
+                if MAX_FI_FEATURES is not None:
+                    used_names = sensors[:min(MAX_FI_FEATURES, len(sensors))]
+                else:
+                    used_names = sensors
+
                 add_feature_importance_rows(src, building, LABEL_MODE, tag_base, "XGBoost", manip_name, lvl,
-                                            sensors, mean_drop, std_drop, method=fi_method)
+                                            used_names, mean_imp, std_imp, method=fi_method)
 
                 if should_plot(manip_name, lvl) and SHOW_FI_INLINE:
                     show_feature_importance_signed(
-                        sensors, mean_drop, std_drop,
-                        title=f"Permutation FI | {tag_base} | XGBoost | {manip_name}={lvl} | metric={FI_METRIC}",
+                        used_names, mean_imp, std_imp,
+                        title=f"SAGE FI | {tag_base} | XGBoost | {manip_name}={lvl} | metric={FI_METRIC}",
                         topk=FI_TOPK,
                         show_inline=True,
                         rank_by="abs"
@@ -1005,26 +1101,29 @@ def run_one_building(item):
                     show_inline=True
                 )
 
-            # ✅ permutation FI (sequence)
+            # ✅ SAGE FI (sequence)
             if COMPUTE_FEATURE_IMPORTANCE:
                 pred_fn = make_torch_predict_fn(m.to(DEVICE))
-                feat_idx, mean_drop, std_drop = perm_importance_sequence(
+                feat_idx, mean_imp, std_imp = sage_importance_sequence(
                     predict_fn_seq=pred_fn,
-                    Xseq=Xte_seq, yseq=yte_seq,
+                    Xseq_test=Xte_seq, yseq_test=yte_seq,
+                    X_train_tab=Xtr_m,  # train distribution (scaled, post-corrupt if CORRUPT_WHERE=="both")
                     metric_fn=metric_fn,
-                    n_repeats=FI_N_REPEATS,
+                    n_perms=FI_SAGE_N_PERMS,
                     seed=FI_SEED + 999,
-                    max_samples=MAX_SEQ_IMPORTANCE_SAMPLES,
-                    max_features=MAX_SEQ_FEATURES_FOR_FI
+                    max_samples=MAX_FI_TEST_SAMPLES_SEQ,
+                    max_features=MAX_FI_FEATURES,
+                    masking=FI_SAGE_MASKING
                 )
+
                 used_names = [sensors[j] for j in feat_idx]
                 add_feature_importance_rows(src, building, LABEL_MODE, tag_base, "LSTM", manip_name, lvl,
-                                            used_names, mean_drop, std_drop, method=fi_method)
+                                            used_names, mean_imp, std_imp, method=fi_method)
 
                 if should_plot(manip_name, lvl) and SHOW_FI_INLINE:
                     show_feature_importance_signed(
-                        used_names, mean_drop, std_drop,
-                        title=f"Permutation FI | {tag_base} | LSTM | {manip_name}={lvl} | metric={FI_METRIC}",
+                        used_names, mean_imp, std_imp,
+                        title=f"SAGE FI | {tag_base} | LSTM | {manip_name}={lvl} | metric={FI_METRIC}",
                         topk=FI_TOPK,
                         show_inline=True,
                         rank_by="abs"
@@ -1067,26 +1166,29 @@ def run_one_building(item):
                     show_inline=True
                 )
 
-            # ✅ permutation FI
+            # ✅ SAGE FI (sequence)
             if COMPUTE_FEATURE_IMPORTANCE:
                 pred_fn = make_torch_predict_fn(m.to(DEVICE))
-                feat_idx, mean_drop, std_drop = perm_importance_sequence(
+                feat_idx, mean_imp, std_imp = sage_importance_sequence(
                     predict_fn_seq=pred_fn,
-                    Xseq=Xte_seq, yseq=yte_seq,
+                    Xseq_test=Xte_seq, yseq_test=yte_seq,
+                    X_train_tab=Xtr_m,
                     metric_fn=metric_fn,
-                    n_repeats=FI_N_REPEATS,
+                    n_perms=FI_SAGE_N_PERMS,
                     seed=FI_SEED + 1999,
-                    max_samples=MAX_SEQ_IMPORTANCE_SAMPLES,
-                    max_features=MAX_SEQ_FEATURES_FOR_FI
+                    max_samples=MAX_FI_TEST_SAMPLES_SEQ,
+                    max_features=MAX_FI_FEATURES,
+                    masking=FI_SAGE_MASKING
                 )
+
                 used_names = [sensors[j] for j in feat_idx]
                 add_feature_importance_rows(src, building, LABEL_MODE, tag_base, "CNN-LSTM", manip_name, lvl,
-                                            used_names, mean_drop, std_drop, method=fi_method)
+                                            used_names, mean_imp, std_imp, method=fi_method)
 
                 if should_plot(manip_name, lvl) and SHOW_FI_INLINE:
                     show_feature_importance_signed(
-                        used_names, mean_drop, std_drop,
-                        title=f"Permutation FI | {tag_base} | CNN-LSTM | {manip_name}={lvl} | metric={FI_METRIC}",
+                        used_names, mean_imp, std_imp,
+                        title=f"SAGE FI | {tag_base} | CNN-LSTM | {manip_name}={lvl} | metric={FI_METRIC}",
                         topk=FI_TOPK,
                         show_inline=True,
                         rank_by="abs"
@@ -1129,26 +1231,29 @@ def run_one_building(item):
                     show_inline=True
                 )
 
-            # ✅ permutation FI
+            # ✅ SAGE FI (sequence)
             if COMPUTE_FEATURE_IMPORTANCE:
                 pred_fn = make_torch_predict_fn(m.to(DEVICE))
-                feat_idx, mean_drop, std_drop = perm_importance_sequence(
+                feat_idx, mean_imp, std_imp = sage_importance_sequence(
                     predict_fn_seq=pred_fn,
-                    Xseq=Xte_seq, yseq=yte_seq,
+                    Xseq_test=Xte_seq, yseq_test=yte_seq,
+                    X_train_tab=Xtr_m,
                     metric_fn=metric_fn,
-                    n_repeats=FI_N_REPEATS,
+                    n_perms=FI_SAGE_N_PERMS,
                     seed=FI_SEED + 2999,
-                    max_samples=MAX_SEQ_IMPORTANCE_SAMPLES,
-                    max_features=MAX_SEQ_FEATURES_FOR_FI
+                    max_samples=MAX_FI_TEST_SAMPLES_SEQ,
+                    max_features=MAX_FI_FEATURES,
+                    masking=FI_SAGE_MASKING
                 )
+
                 used_names = [sensors[j] for j in feat_idx]
                 add_feature_importance_rows(src, building, LABEL_MODE, tag_base, "Informer", manip_name, lvl,
-                                            used_names, mean_drop, std_drop, method=fi_method)
+                                            used_names, mean_imp, std_imp, method=fi_method)
 
                 if should_plot(manip_name, lvl) and SHOW_FI_INLINE:
                     show_feature_importance_signed(
-                        used_names, mean_drop, std_drop,
-                        title=f"Permutation FI | {tag_base} | Informer | {manip_name}={lvl} | metric={FI_METRIC}",
+                        used_names, mean_imp, std_imp,
+                        title=f"SAGE FI | {tag_base} | Informer | {manip_name}={lvl} | metric={FI_METRIC}",
                         topk=FI_TOPK,
                         show_inline=True,
                         rank_by="abs"
@@ -1183,8 +1288,12 @@ log_kv("SHOW_HEATMAP_INLINE", SHOW_HEATMAP_INLINE)
 log_kv("SHOW_FI_INLINE", SHOW_FI_INLINE)
 log_kv("Only plot clean+worst", PLOT_ONLY_CLEAN_AND_WORST)
 log_kv("FI metric", FI_METRIC)
-log_kv("FI repeats", FI_N_REPEATS)
 log_kv("FI seed", FI_SEED)
+log_kv("FI_SAGE_N_PERMS", FI_SAGE_N_PERMS)
+log_kv("FI_SAGE_MASKING", FI_SAGE_MASKING)
+log_kv("MAX_FI_TEST_SAMPLES_TAB", MAX_FI_TEST_SAMPLES_TAB)
+log_kv("MAX_FI_TEST_SAMPLES_SEQ", MAX_FI_TEST_SAMPLES_SEQ)
+log_kv("MAX_FI_FEATURES", MAX_FI_FEATURES)
 
 items = []
 items += load_dataset_lbnl()
