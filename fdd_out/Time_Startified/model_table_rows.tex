@@ -1,0 +1,6 @@
+Linear SVM & Tabular & Linear classifier with C=1.0 and class-balanced weighting. & -- & 160 weights \\
+Random Forest & Tabular & 400 decision trees; minimum leaf size 2; unrestricted depth; class-balanced subsampling. & -- & 625,404 nodes \\
+XGBoost & Tabular & 300 boosted trees; maximum depth 5; learning rate 0.08; row/column subsampling 0.85. & -- & 66,824 nodes \\
+LSTM & Sequence & 2×LSTM + linear classifier (last step to logits); dropout 0.2. & 64 & 55,690 params \\
+CNN--LSTM & Sequence & Conv1D (32 channels, kernel size 3) + 1×LSTM + linear classifier. & 64 & 27,594 params \\
+Informer-style encoder & Sequence & Input projection to d=64 + 2×Transformer encoder (4 heads) + linear classifier. & 64 & 564,234 params \\

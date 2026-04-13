@@ -1,0 +1,15 @@
+fault type,fault intensity,fault occurred time
+Condenser Fouling,25% reduction in condenser coil air flow full load,8/27/17
+Condenser Fouling,50% reduction in condenser coil air flow full load,8/29/17
+HVAC Setback Error: Delayed Onset,3-hour onset delay,12/1/17
+HVAC Setback Error: Early Termination,3-hour early termination,12/3/17
+Excessive infiltration,+20% infiltration,12/7/17
+Excessive infiltration,+40% infiltration,12/14/17
+Lighting Setback Error: Delayed Onset,3-hour onset delay,2/7/18
+Lighting Setback Error: Early Termination,3-hour early termination,2/9/18
+No Overnight HVAC Setback,No setback,12/20/17
+No Overnight Lighting Setback,No setback,2/18/18
+Thermostat measurement bias,Bias of +4°F (Core zone 103),2/1/18
+Thermostat measurement bias,Bias of -4°F (Core zone 103),1/31/18
+Thermostat measurement bias,Bias of +4°F (Perimeter zone 205),1/28/18
+Thermostat measurement bias,Bias of -4°F (Perimeter zone 205),1/27/18

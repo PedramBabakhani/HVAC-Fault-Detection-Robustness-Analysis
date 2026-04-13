@@ -1,0 +1,16 @@
+fault type,fault intensity,fault occurred time
+Stuck OA Damper,Fully open (100%),3/18/17
+Stuck OA Damper,Partially open (50%),3/19/17
+Leakage of OA Damper,20% of max damper flow,3/20/17
+Leakage of OA Damper,50% of max damper flow,3/21/17
+Stuck Heating Coil Valve,Fully closed (0%),3/24/17
+Stuck Heating Coil Valve,Fully open (100%),3/25/17
+Stuck Heating Coil Valve,Partially open (50%),3/26/17
+Leakage of Heating Coil Valve,5% of max coil valve flow,3/22/17
+Leakage of Heating Coil Valve,40% of max coil valve flow,3/23/17
+Stuck Cooling Coil Valve,Fully closed (0%),3/11/17
+Stuck Cooling Coil Valve,Fully open (100%),3/12/17
+Stuck Cooling Coil Valve,Partially open (50%),3/31/17
+Leakage of Cooling Coil Valve,5% of max coil valve flow,3/15/17
+Leakage of Cooling Coil Valve,50% of max coil valve flow,3/16/17
+

@@ -1,0 +1,23 @@
+# Core numerical computing
+numpy>=1.23
+pandas>=1.5
+
+# Visualization
+matplotlib>=3.6
+seaborn>=0.12
+
+# Machine Learning
+scikit-learn>=1.2
+
+# Gradient Boosting
+xgboost>=1.7
+
+# Deep Learning
+torch>=2.0
+
+# Utilities
+tqdm>=4.65
+
+# Optional but recommended for stability
+scipy>=1.10
+joblib>=1.2

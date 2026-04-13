@@ -1,0 +1,14 @@
+fault type,fault intensity,fault occurred time
+Stuck OA Damper,Stuck Fully closed,2/12/2008
+Stuck OA Damper,Stuck Fully closed,5/7/2008
+Stuck OA Damper,Stuck 40% Open,5/8/2008
+Stuck OA Damper,Stuck 45% Open,9/5/2007
+Stuck OA Damper,Stuck 55% Open,9/6/2007
+Leakage of Heating Coil Valve,Leaking Stage 1: 0.4 GPM,8/28/2007
+Leakage of Heating Coil Valve,Leaking Stage 2: 1.0 GPM,8/29/2007
+Leakage of Heating Coil Valve,Leaking Stage 3: 2.0 GPM,8/30/2007
+Stuck Cooling Coil Valve,Stuck Fully closed,5/6/2008
+Stuck Cooling Coil Valve,Stuck Fully open,8/31/2007
+Stuck Cooling Coil Valve,Stuck Fully open,5/15/2008
+Stuck Cooling Coil Valve,Stuck Partially open 15%,9/1/2007
+Stuck Cooling Coil Valve,Stuck Partially open 65%,9/2/2007

@@ -1,0 +1,8 @@
+fault type,fault intensity,fault occurred time
+Stuck OA Damper,Minimum position,9/18/17
+Stuck OA Damper,Fully open (100%),9/19/17
+Stuck Heating Coil Valve,Fully open (100%),9/14/17
+Stuck Heating Coil Valve,Partially open(50%),9/15/17
+Leakage of Heating Coil Valve,40% of max coil valve flow,9/12/17
+Stuck Cooling Coil Valve,Fully open (100%),9/22/17
+Leakage of Cooling Coil Valve,50% of max coil valve flow,9/11/17
