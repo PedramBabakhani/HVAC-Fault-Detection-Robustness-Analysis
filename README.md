@@ -479,7 +479,7 @@ Example:
 ```
 @misc{yourname_fdd_pipeline_2026,
   title        = {Pipeline of Robustness analysis of Data-Driven Fault Detection methods for HVAC Systems},
-  author       = {Your Name},
+  author       = {Pedram Babakhani},
   year         = {2026},
   howpublished = {GitHub repository}
 }
@@ -516,16 +516,3 @@ pedram.babakhani@tu-berlin.de
 ```
 
 ---
-
-## Notes
-
-This repository provides a **modular and extensible framework** for building fault detection experiments.
-
-It is intended for:
-
-* research
-* benchmarking
-* model comparison
-* robustness evaluation
-
-The structure supports both **academic research workflows** and **industrial experimentation**.
