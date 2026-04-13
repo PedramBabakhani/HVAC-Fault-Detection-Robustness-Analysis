@@ -1,9 +1,5 @@
-Here is your **clean, copy-paste ready `README.md`**, written as **pure Markdown** (no wrappers, no mixed formatting).
-You can paste this **directly into `README.md`** in your repo.
 
----
-
-# Unified Fault Detection Pipeline for Building Systems
+# Fault Detection Pipeline for HVAC Systems
 
 A reproducible machine learning pipeline for **fault detection and diagnosis (FDD)** in building and HVAC systems.
 This repository provides a unified benchmarking framework for training and evaluating both **tabular** and **sequence-based** models under **clean and degraded sensor conditions**.
@@ -12,7 +8,7 @@ This repository provides a unified benchmarking framework for training and evalu
 
 ## Overview
 
-This repository implements a complete experimental pipeline for **building fault detection**, designed to support:
+This repository implements a complete experimental pipeline for **HVAC fault detection**, designed to support:
 
 * structured model comparison
 * reproducible experiments
@@ -336,7 +332,7 @@ torch
 Run the main pipeline:
 
 ```
-python fdd_pipeline.py
+python Pipeline.py
 ```
 
 This will:
@@ -347,6 +343,19 @@ This will:
 * save all outputs
 
 ---
+
+Run the feature importance pipeline:
+
+```
+python Feature_importance.py
+```
+
+This will:
+
+* load datasets
+* train models
+* compute the permutation feature importance
+
 
 ## Configuration
 
