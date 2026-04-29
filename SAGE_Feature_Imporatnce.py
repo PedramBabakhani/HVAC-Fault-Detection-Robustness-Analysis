@@ -8,8 +8,8 @@
 # - computes feature importance on the clean test set only
 # - exports one unified feature-importance table across all buildings
 #
-# Output:sage
-#   /kaggle/working/feature_importance_clean_all_buildings_all_models.csv
+# Output:
+#   ./outputs/sage_out/feature_importance_clean_all_buildings_all_models.csv
 #
 # Supported datasets:
 #   - LBNL_DataFDD
@@ -35,6 +35,7 @@
 # ============================================================
 
 import os
+import sys
 import warnings
 import time
 from pathlib import Path
@@ -56,6 +57,49 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 
 from xgboost import XGBClassifier
+
+
+# ------------------------------------------------------------
+# Project path handling
+# ------------------------------------------------------------
+def find_project_root(start=None):
+    """
+    Find project root by walking upward until a repo marker is found.
+    Works from repo root, scripts/, notebooks/, or VS Code.
+    """
+    if start is None:
+        if "__file__" in globals():
+            start = Path(__file__).resolve().parent
+        else:
+            start = Path.cwd().resolve()
+    else:
+        start = Path(start).resolve()
+
+    for parent in [start, *start.parents]:
+        if (
+            (parent / "data_FDD").exists()
+            or (parent / "README.md").exists()
+            or (parent / ".git").exists()
+        ):
+            return parent
+
+    return start
+
+
+PROJECT_ROOT = find_project_root()
+
+SRC_DIR = PROJECT_ROOT / "src"
+if SRC_DIR.exists() and str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+DATA_DIR = PROJECT_ROOT / "data_FDD"
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
+SAGE_OUT_DIR = OUTPUT_DIR / "sage_out"
+
+LBNL_RAW_DIR = DATA_DIR / "5_lbnl_data_synthesis_inventory" / "raw"
+WANG_RAW_DIR = DATA_DIR / "8_nature_lcu_wang" / "raw"
+
+SAGE_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # ------------------------------------------------------------
@@ -99,7 +143,7 @@ SEQ_MAX_SAMPLES = 1200
 SEQ_REPEATS = 3
 SEQ_BATCH = 1024
 
-OUT_PATH = "./SAGE_out/feature_importance_clean_all_buildings_all_models.csv"
+OUT_PATH = SAGE_OUT_DIR / "feature_importance_clean_all_buildings_all_models.csv"
 
 
 # ------------------------------------------------------------
@@ -131,7 +175,10 @@ def sensor_cols_generic(df, exclude):
     """
     Return numeric columns that are not explicitly excluded.
     """
-    return [c for c in df.columns if c not in exclude and np.issubdtype(df[c].dtype, np.number)]
+    return [
+        c for c in df.columns
+        if c not in exclude and np.issubdtype(df[c].dtype, np.number)
+    ]
 
 
 def sanitize_sensors(df, sensors):
@@ -154,6 +201,7 @@ def sanitize_sensors(df, sensors):
     }
 
     clean = []
+
     for c in sensors:
         cl = str(c).lower()
 
@@ -180,8 +228,14 @@ def assert_no_leakage(sensors):
     """
     bad = [
         s for s in sensors
-        if ("fault" in s.lower()) or ("label" in s.lower()) or ("truth" in s.lower()) or ("code" in s.lower())
+        if (
+            ("fault" in s.lower())
+            or ("label" in s.lower())
+            or ("truth" in s.lower())
+            or ("code" in s.lower())
+        )
     ]
+
     assert len(bad) == 0, f"Leakage columns detected in sensors: {bad}"
 
 
@@ -190,8 +244,10 @@ def clean_fault_name(s):
     Normalize a fault name by removing trailing bracketed details.
     """
     s = str(s).strip()
+
     if "(" in s:
         return s.split("(")[0].strip()
+
     return s
 
 
@@ -222,8 +278,10 @@ def map_fault_to_family(label: str) -> str:
 
     if "outdoor air temperature sensor bias" in s:
         return "SENSOR_BIAS"
+
     if "thermostat measurement bias" in s:
         return "SENSOR_BIAS"
+
     if "bias" in s and ("sensor" in s or "thermostat" in s or "measurement" in s):
         return "SENSOR_BIAS"
 
@@ -255,6 +313,7 @@ def build_family_codec_from_labels(labels):
     fams = [map_fault_to_family(x) for x in labels]
 
     ordered = [f for f in FAULT_FAMILY_ORDER if f in set(fams)]
+
     for f in sorted(set(fams)):
         if f not in ordered:
             ordered.append(f)
@@ -300,10 +359,12 @@ def stratified_split_keep_singletons_in_train(X, y, test_size=0.2, seed=42):
     idx_rest = idx_all[~np.isin(y, singleton_classes)]
 
     X_rest, y_rest = X[idx_rest], y[idx_rest]
+
     if len(X_rest) < 5:
         return X, X[:0], y, y[:0]
 
     vals2, cnts2 = np.unique(y_rest, return_counts=True)
+
     if cnts2.min() < 2:
         Xtr_r, Xte_r, ytr_r, yte_r = train_test_split(
             X_rest,
@@ -340,17 +401,22 @@ def merge_lbnl_sensor_fault(sensor_df, fault_df, max_sensor_cols=20):
     Merge LBNL sensor data with fault intervals and create raw/family labels.
     """
     df = sensor_df.copy()
+
     df["Datetime"] = pd.to_datetime(df["Datetime"], errors="coerce")
     df = df.dropna(subset=["Datetime"]).sort_values("Datetime").reset_index(drop=True)
+
     df["FaultName"] = "Normal"
 
     fault_df = fault_df.rename(columns=lambda x: x.strip().lower())
+
     fault_col = next(c for c in fault_df.columns if "fault" in c)
     time_col = next(c for c in fault_df.columns if "time" in c)
 
     for _, row in fault_df.iterrows():
         fname = clean_fault_name(row[fault_col])
+
         t_raw = str(row[time_col])
+
         t = (
             t_raw.replace("TO", "to")
             .replace("To", "to")
@@ -358,6 +424,7 @@ def merge_lbnl_sensor_fault(sensor_df, fault_df, max_sensor_cols=20):
             .replace("—", " to ")
             .replace("-", " to ")
         )
+
         parts = [p.strip() for p in t.split("to")]
 
         if len(parts) == 2:
@@ -374,11 +441,14 @@ def merge_lbnl_sensor_fault(sensor_df, fault_df, max_sensor_cols=20):
         df.loc[mask, "FaultName"] = fname
 
     uniq = sorted(df["FaultName"].unique())
+
     fmap = {f: i for i, f in enumerate(uniq)}
     inv = {i: f for f, i in fmap.items()}
+
     df["FaultCode"] = df["FaultName"].map(fmap).astype(int)
 
     fam2id, id2fam = build_family_codec_from_labels(uniq)
+
     df["FaultFamily"] = df["FaultName"].map(map_fault_to_family)
     df["FaultFamilyCode"] = df["FaultFamily"].map(fam2id).astype(int)
 
@@ -386,8 +456,10 @@ def merge_lbnl_sensor_fault(sensor_df, fault_df, max_sensor_cols=20):
         df,
         exclude=["Datetime", "FaultName", "FaultCode", "FaultFamily", "FaultFamilyCode"]
     )
+
     sensors = sanitize_sensors(df, sensors)
     assert_no_leakage(sensors)
+
     sensors = sensors[:min(max_sensor_cols, len(sensors))]
 
     df[sensors] = df[sensors].ffill().bfill()
@@ -396,6 +468,7 @@ def merge_lbnl_sensor_fault(sensor_df, fault_df, max_sensor_cols=20):
         "inv_fault_map": inv,
         "inv_family_map": id2fam
     }
+
     return df, sensors, meta
 
 
@@ -424,30 +497,44 @@ def preprocess_wang_building(df, max_sensor_cols=20):
                 pass
 
     df["labeling"] = df["labeling"].astype(str)
+
     df["FaultCode"] = df["labeling"].astype("category").cat.codes
+
     cats = df["labeling"].astype("category").cat.categories
     inv_map = {i: cat for i, cat in enumerate(cats)}
 
     fam2id, id2fam = build_family_codec_from_labels(list(cats))
+
     df["FaultFamily"] = df["labeling"].map(map_fault_to_family)
     df["FaultFamilyCode"] = df["FaultFamily"].map(fam2id).astype(int)
 
     exclude = [
-        "timestamp", "Time", "DATE", "AHU name",
-        "labeling", "FaultCode", "FaultFamily", "FaultFamilyCode"
+        "timestamp",
+        "Time",
+        "DATE",
+        "AHU name",
+        "labeling",
+        "FaultCode",
+        "FaultFamily",
+        "FaultFamilyCode"
     ]
+
     sensors = sensor_cols_generic(df, exclude=exclude)
+
     sensors = sanitize_sensors(df, sensors)
     assert_no_leakage(sensors)
+
     sensors = sensors[:min(max_sensor_cols, len(sensors))]
 
     df = df.dropna(subset=["timestamp"]).sort_values("timestamp").reset_index(drop=True)
+
     df[sensors] = df[sensors].ffill().bfill()
 
     meta = {
         "inv_fault_map": inv_map,
         "inv_family_map": id2fam
     }
+
     return df, sensors, meta
 
 
@@ -460,7 +547,9 @@ def create_sequences(X, y, seq_len=24, stride=1):
 
     The label assigned to each sequence is the label of its final time step.
     """
-    Xs, ys = [], []
+    Xs = []
+    ys = []
+
     for i in range(0, len(X) - seq_len + 1, stride):
         Xs.append(X[i:i + seq_len])
         ys.append(y[i + seq_len - 1])
@@ -480,6 +569,7 @@ def cap(X, y, max_n, seed=42):
 
     rng = np.random.default_rng(seed)
     idx = rng.choice(len(X), size=max_n, replace=False)
+
     return X[idx], y[idx]
 
 
@@ -491,11 +581,15 @@ def coerce_pred_labels(y_pred):
     Convert predictions to a flat integer label array.
     """
     y_pred = np.asarray(y_pred)
+
     if y_pred.ndim == 2:
         y_pred = np.argmax(y_pred, axis=1)
+
     y_pred = np.ravel(y_pred)
+
     if np.issubdtype(y_pred.dtype, np.floating):
         y_pred = y_pred.astype(int)
+
     return y_pred
 
 
@@ -504,7 +598,13 @@ def metric_macro_f1(y_true, y_pred):
     Macro-F1 evaluation metric used for feature-importance scoring.
     """
     y_pred = coerce_pred_labels(y_pred)
-    return f1_score(y_true, y_pred, average="macro", zero_division=0)
+
+    return f1_score(
+        y_true,
+        y_pred,
+        average="macro",
+        zero_division=0
+    )
 
 
 def _subsample_xy(X, y, max_n, rng):
@@ -515,11 +615,12 @@ def _subsample_xy(X, y, max_n, rng):
         return X, y
 
     idx = rng.choice(len(X), size=max_n, replace=False)
+
     return X[idx], y[idx]
 
 
 # ------------------------------------------------------------
-# Tabular feature importance (SAGE-style approximation)
+# Tabular feature importance: SAGE-style approximation
 # ------------------------------------------------------------
 def _mask_tabular(X, X_train, feat_idx, rng, masking="mean"):
     """
@@ -531,12 +632,15 @@ def _mask_tabular(X, X_train, feat_idx, rng, masking="mean"):
 
     if masking == "mean":
         col_mean = X_train.mean(axis=0)
+
         for j in feat_idx:
             Xm[:, j] = col_mean[j]
+
     elif masking == "sample":
         for j in feat_idx:
             src = X_train[:, j]
             Xm[:, j] = rng.choice(src, size=len(Xm), replace=True)
+
     else:
         raise ValueError("masking must be 'sample' or 'mean'")
 
@@ -561,6 +665,7 @@ def sage_importance_tabular(
     Returns mean and standard deviation of importance across permutations.
     """
     rng = np.random.default_rng(seed)
+
     Xs, ys = _subsample_xy(X_test, y_test, max_samples, rng)
 
     if len(Xs) == 0:
@@ -568,20 +673,31 @@ def sage_importance_tabular(
 
     F = Xs.shape[1]
     feat_idx = np.arange(F)
+
     contrib = np.zeros((n_perms, F), dtype=float)
 
     for p in range(n_perms):
         order = rng.permutation(F)
 
-        Xmasked = _mask_tabular(Xs, X_train, feat_idx, rng, masking=masking)
+        Xmasked = _mask_tabular(
+            Xs,
+            X_train,
+            feat_idx,
+            rng,
+            masking=masking
+        )
+
         pred0 = coerce_pred_labels(predict_fn(Xmasked))
         prev = metric_fn(ys, pred0)
 
         Xcurr = Xmasked.copy()
+
         for j in order:
             Xcurr[:, j] = Xs[:, j]
+
             pred1 = coerce_pred_labels(predict_fn(Xcurr))
             sc1 = metric_fn(ys, pred1)
+
             contrib[p, j] = sc1 - prev
             prev = sc1
 
@@ -589,13 +705,14 @@ def sage_importance_tabular(
 
 
 # ------------------------------------------------------------
-# Sequence feature importance (permutation-drop)
+# Sequence feature importance: permutation-drop
 # ------------------------------------------------------------
 def torch_predict_labels(model, X, device, batch_size=1024):
     """
     Batched prediction helper for PyTorch sequence models.
     """
     model.eval()
+
     preds = []
 
     with torch.inference_mode():
@@ -624,17 +741,25 @@ def permutation_importance_sequence(
     The importance is measured as the drop in macro-F1.
     """
     rng = np.random.default_rng(seed)
+
     Xs, ys = _subsample_xy(Xseq_test, yseq_test, max_samples, rng)
 
     if len(Xs) == 0:
         return None, None
 
     base_pred = coerce_pred_labels(
-        torch_predict_labels(model, Xs, device=device, batch_size=batch_size)
+        torch_predict_labels(
+            model,
+            Xs,
+            device=device,
+            batch_size=batch_size
+        )
     )
+
     base_score = metric_fn(ys, base_pred)
 
     F = Xs.shape[2]
+
     mean_imp = np.zeros(F, dtype=float)
     std_imp = np.zeros(F, dtype=float)
 
@@ -643,12 +768,19 @@ def permutation_importance_sequence(
 
         for _ in range(n_repeats):
             Xp = Xs.copy()
+
             perm = rng.permutation(len(Xp))
             Xp[:, :, j] = Xp[perm, :, j]
 
             pred = coerce_pred_labels(
-                torch_predict_labels(model, Xp, device=device, batch_size=batch_size)
+                torch_predict_labels(
+                    model,
+                    Xp,
+                    device=device,
+                    batch_size=batch_size
+                )
             )
+
             sc = metric_fn(ys, pred)
             drops.append(base_score - sc)
 
@@ -667,6 +799,7 @@ class TinyLSTM(nn.Module):
     """
     def __init__(self, input_dim, num_classes, hidden=64, layers=2, dropout=0.2):
         super().__init__()
+
         self.lstm = nn.LSTM(
             input_dim,
             hidden,
@@ -674,6 +807,7 @@ class TinyLSTM(nn.Module):
             dropout=dropout,
             batch_first=True
         )
+
         self.fc = nn.Linear(hidden, num_classes)
 
     def forward(self, x):
@@ -687,7 +821,9 @@ class TinyCNNLSTM(nn.Module):
     """
     def __init__(self, input_dim, num_classes, channels=32, hidden=64, layers=1, dropout=0.2):
         super().__init__()
+
         self.cnn = nn.Conv1d(input_dim, channels, kernel_size=3, padding=1)
+
         self.lstm = nn.LSTM(
             channels,
             hidden,
@@ -695,13 +831,16 @@ class TinyCNNLSTM(nn.Module):
             dropout=dropout if layers > 1 else 0.0,
             batch_first=True
         )
+
         self.fc = nn.Linear(hidden, num_classes)
 
     def forward(self, x):
         x = x.transpose(2, 1)
         x = torch.relu(self.cnn(x))
         x = x.transpose(2, 1)
+
         out, _ = self.lstm(x)
+
         return self.fc(out[:, -1, :])
 
 
@@ -711,7 +850,9 @@ class TinyInformerClassifier(nn.Module):
     """
     def __init__(self, input_dim, num_classes, d_model=64, nhead=4, num_layers=2, dropout=0.15):
         super().__init__()
+
         self.in_proj = nn.Linear(input_dim, d_model)
+
         enc_layer = nn.TransformerEncoderLayer(
             d_model=d_model,
             nhead=nhead,
@@ -719,6 +860,7 @@ class TinyInformerClassifier(nn.Module):
             batch_first=True,
             norm_first=True
         )
+
         self.encoder = nn.TransformerEncoder(enc_layer, num_layers=num_layers)
         self.cls = nn.Linear(d_model, num_classes)
 
@@ -733,6 +875,7 @@ def train_torch(model, Xtr, ytr, epochs=8, batch_size=1024, lr=8e-4, grad_clip=1
     Train a PyTorch classifier on sequence data.
     """
     model = model.to(DEVICE)
+
     opt = optim.AdamW(model.parameters(), lr=lr)
     loss_fn = nn.CrossEntropyLoss()
 
@@ -745,13 +888,16 @@ def train_torch(model, Xtr, ytr, epochs=8, batch_size=1024, lr=8e-4, grad_clip=1
 
     for _ in range(epochs):
         model.train()
+
         for xb, yb in loader:
             xb = xb.to(DEVICE, non_blocking=True)
             yb = yb.to(DEVICE, non_blocking=True)
 
             opt.zero_grad(set_to_none=True)
+
             logits = model(xb)
             loss = loss_fn(logits, yb)
+
             loss.backward()
 
             if grad_clip and grad_clip > 0:
@@ -770,7 +916,8 @@ def iter_all_buildings():
     Yield metadata for all supported buildings across all supported datasets.
     """
     # LBNL
-    RAW_LBNL = Path("./data_FDD/5_lbnl_data_synthesis_inventory/raw/")
+    RAW_LBNL = LBNL_RAW_DIR
+
     lbnl_map = {
         "RTU":       {"sensor": RAW_LBNL / "RTU.csv",       "faults": RAW_LBNL / "RTU-faults.csv"},
         "SZCAV":     {"sensor": RAW_LBNL / "SZCAV.csv",     "faults": RAW_LBNL / "SZCAV-faults.csv"},
@@ -781,32 +928,53 @@ def iter_all_buildings():
     }
 
     for building, paths in lbnl_map.items():
-        yield {
-            "dataset": "LBNL_DataFDD",
-            "building": building,
-            "paths": paths
-        }
+        if paths["sensor"].exists() and paths["faults"].exists():
+            yield {
+                "dataset": "LBNL_DataFDD",
+                "building": building,
+                "paths": paths
+            }
+        else:
+            log_kv(f"Skip {building}", f"missing files: {paths}")
 
     # Wang
-    ROOT_WANG = Path("./data_FDD/8_nature_lcu_wang/raw/")
+    ROOT_WANG = WANG_RAW_DIR
+
     wang_files = {
         "auditorium": ROOT_WANG / "auditorium_scientific_data.csv",
-        "office":     ROOT_WANG / "office_scientific_data.csv",
-        "hospital":   ROOT_WANG / "hosptial_scientific_data.csv",
+        "office": ROOT_WANG / "office_scientific_data.csv",
+        "hospital": ROOT_WANG / "hosptial_scientific_data.csv",
     }
 
     for building, fp in wang_files.items():
-        yield {
-            "dataset": "Nature_LCU_Wang",
-            "building": building,
-            "paths": {"csv": fp}
-        }
+        if fp.exists():
+            yield {
+                "dataset": "Nature_LCU_Wang",
+                "building": building,
+                "paths": {
+                    "csv": fp
+                }
+            }
+        else:
+            log_kv(f"Skip {building}", f"missing file: {fp}")
 
 
 # ------------------------------------------------------------
 # Result-row helper
 # ------------------------------------------------------------
-def add_rows(rows, dataset, building, label_mode, tag, fi_type, model_name, feat_names, mean_imp, std_imp, method):
+def add_rows(
+    rows,
+    dataset,
+    building,
+    label_mode,
+    tag,
+    fi_type,
+    model_name,
+    feat_names,
+    mean_imp,
+    std_imp,
+    method
+):
     """
     Append feature-importance rows to the global output list.
     """
@@ -837,6 +1005,15 @@ def add_rows(rows, dataset, building, label_mode, tag, fi_type, model_name, feat
 # Main run
 # ============================================================
 log_header("Feature-importance run across all buildings")
+
+log_kv("PROJECT_ROOT", PROJECT_ROOT)
+log_kv("DATA_DIR", DATA_DIR)
+log_kv("OUTPUT_DIR", OUTPUT_DIR)
+log_kv("SAGE_OUT_DIR", SAGE_OUT_DIR)
+log_kv("LBNL_RAW_DIR", LBNL_RAW_DIR)
+log_kv("WANG_RAW_DIR", WANG_RAW_DIR)
+log_kv("OUT_PATH", OUT_PATH)
+
 log_kv("Device", DEVICE)
 log_kv("Label mode", LABEL_MODE)
 log_kv("Test size", TEST_SIZE)
@@ -864,24 +1041,27 @@ for item in iter_all_buildings():
         p = item["paths"]
 
         if (not p["sensor"].exists()) or (not p["faults"].exists()):
-            log_kv("Skip", "missing files")
+            log_kv("Skip", f"missing files: {p}")
             continue
 
         sensor_df = pd.read_csv(p["sensor"])
         fault_df = pd.read_csv(p["faults"])
+
         df, sensors, meta = merge_lbnl_sensor_fault(
             sensor_df,
             fault_df,
             max_sensor_cols=MAX_SENSOR_COLS
         )
+
     else:
         fp = item["paths"]["csv"]
 
         if not fp.exists():
-            log_kv("Skip", "missing file")
+            log_kv("Skip", f"missing file: {fp}")
             continue
 
         df0 = pd.read_csv(fp)
+
         df, sensors, meta = preprocess_wang_building(
             df0,
             max_sensor_cols=MAX_SENSOR_COLS
@@ -904,6 +1084,7 @@ for item in iter_all_buildings():
     y_all = df[y_col].to_numpy().astype(int)
 
     vals, cnts = np.unique(y_all, return_counts=True)
+
     log_kv("X shape", X_all_raw.shape)
     log_kv("Classes", len(np.unique(y_all)))
     log_kv("Min class count", int(cnts.min()))
@@ -913,12 +1094,14 @@ for item in iter_all_buildings():
     # Train/test split
     # --------------------------------------------------------
     t0 = time.time()
+
     Xtr_raw, Xte_raw, ytr_raw, yte_raw = stratified_split_keep_singletons_in_train(
         X_all_raw,
         y_all,
         test_size=TEST_SIZE,
         seed=42
     )
+
     log_kv("Split seconds", f"{time.time() - t0:.2f}")
     log_kv("Train size", Xtr_raw.shape)
     log_kv("Test size", Xte_raw.shape)
@@ -931,6 +1114,7 @@ for item in iter_all_buildings():
     # Scaling
     # --------------------------------------------------------
     scaler = StandardScaler().fit(Xtr_raw)
+
     Xtr_m = scaler.transform(Xtr_raw)
     Xte_m = scaler.transform(Xte_raw)
 
@@ -940,11 +1124,33 @@ for item in iter_all_buildings():
     # --------------------------------------------------------
     # Build sequence datasets
     # --------------------------------------------------------
-    Xtr_seq, ytr_seq = create_sequences(Xtr_m, ytr_raw, seq_len=SEQ_LEN, stride=SEQ_STRIDE)
-    Xte_seq, yte_seq = create_sequences(Xte_m, yte_raw, seq_len=SEQ_LEN, stride=SEQ_STRIDE)
+    Xtr_seq, ytr_seq = create_sequences(
+        Xtr_m,
+        ytr_raw,
+        seq_len=SEQ_LEN,
+        stride=SEQ_STRIDE
+    )
 
-    Xtr_seq, ytr_seq = cap(Xtr_seq, ytr_seq, MAX_SEQ_TRAIN, seed=42)
-    Xte_seq, yte_seq = cap(Xte_seq, yte_seq, MAX_SEQ_TEST, seed=43)
+    Xte_seq, yte_seq = create_sequences(
+        Xte_m,
+        yte_raw,
+        seq_len=SEQ_LEN,
+        stride=SEQ_STRIDE
+    )
+
+    Xtr_seq, ytr_seq = cap(
+        Xtr_seq,
+        ytr_seq,
+        MAX_SEQ_TRAIN,
+        seed=42
+    )
+
+    Xte_seq, yte_seq = cap(
+        Xte_seq,
+        yte_seq,
+        MAX_SEQ_TEST,
+        seed=43
+    )
 
     # --------------------------------------------------------
     # Train all models once
@@ -957,6 +1163,7 @@ for item in iter_all_buildings():
         int(ytr_seq.max()) if len(ytr_seq) else 0,
         int(yte_seq.max()) if len(yte_seq) else 0
     ) + 1)
+
     log_kv("n_classes", n_classes)
 
     tab_models = {
@@ -978,7 +1185,9 @@ for item in iter_all_buildings():
     # Train tabular models
     for name, mdl in tab_models.items():
         tt = time.time()
+
         mdl.fit(Xtr_fit, ytr_fit)
+
         log_kv(f"Train {name} s", f"{time.time() - tt:.2f}")
 
     # Train XGBoost with remapped labels
@@ -1003,16 +1212,22 @@ for item in iter_all_buildings():
         )
 
         tt = time.time()
+
         xgb_model.fit(Xtr_fit, ytr_xgb, verbose=False)
+
         log_kv("Train XGBoost s", f"{time.time() - tt:.2f}")
+
         tab_models["XGBoost"] = xgb_model
+
     else:
-        log_kv("XGBoost", f"skip (K={K})")
+        log_kv("XGBoost", f"skip because K={K}")
 
     # Train sequence models
     seq_models = {}
+
     if len(Xtr_seq) >= 50 and len(Xte_seq) >= 50 and n_classes >= 2:
         tt = time.time()
+
         seq_models["LSTM"] = train_torch(
             TinyLSTM(Xtr_seq.shape[2], n_classes),
             Xtr_seq,
@@ -1022,9 +1237,11 @@ for item in iter_all_buildings():
             lr=LR,
             grad_clip=GRAD_CLIP
         )
+
         log_kv("Train LSTM s", f"{time.time() - tt:.2f}")
 
         tt = time.time()
+
         seq_models["CNN-LSTM"] = train_torch(
             TinyCNNLSTM(Xtr_seq.shape[2], n_classes),
             Xtr_seq,
@@ -1034,9 +1251,11 @@ for item in iter_all_buildings():
             lr=LR,
             grad_clip=GRAD_CLIP
         )
+
         log_kv("Train CNN-LSTM s", f"{time.time() - tt:.2f}")
 
         tt = time.time()
+
         seq_models["Informer"] = train_torch(
             TinyInformerClassifier(Xtr_seq.shape[2], n_classes),
             Xtr_seq,
@@ -1046,9 +1265,11 @@ for item in iter_all_buildings():
             lr=LR,
             grad_clip=GRAD_CLIP
         )
+
         log_kv("Train Informer s", f"{time.time() - tt:.2f}")
+
     else:
-        log_kv("Seq models", "skip (too few sequences or classes)")
+        log_kv("Seq models", "skip because too few sequences or classes")
 
     log_kv("Total train phase s", f"{time.time() - t_train:.2f}")
 
@@ -1060,6 +1281,7 @@ for item in iter_all_buildings():
 
     # Tabular FI
     log_sub("Feature importance: tabular")
+
     for name, mdl in tab_models.items():
         tfi = time.time()
 
@@ -1067,10 +1289,18 @@ for item in iter_all_buildings():
             # XGBoost is trained on remapped class ids, so the test labels
             # must be filtered and re-encoded accordingly.
             mask = np.isin(yte_raw, le.classes_)
+
             Xte_xgb = Xte_m[mask]
-            yte_xgb = le.transform(yte_raw[mask])
+            yte_xgb_raw = yte_raw[mask]
+
+            if len(Xte_xgb) < 5:
+                log_kv("FI XGBoost", "skip because too few matching test samples")
+                continue
+
+            yte_xgb = le.transform(yte_xgb_raw)
 
             pred_fn = lambda Z: coerce_pred_labels(mdl.predict(Z))
+
             mean_imp, std_imp = sage_importance_tabular(
                 predict_fn=pred_fn,
                 X_test=Xte_xgb,
@@ -1096,8 +1326,10 @@ for item in iter_all_buildings():
                 std_imp,
                 method_tab
             )
+
         else:
             pred_fn = lambda Z, m=mdl: m.predict(Z)
+
             mean_imp, std_imp = sage_importance_tabular(
                 predict_fn=pred_fn,
                 X_test=Xte_m,
@@ -1128,8 +1360,10 @@ for item in iter_all_buildings():
 
     # Sequence FI
     log_sub("Feature importance: sequence")
+
     if len(seq_models) == 0:
         log_kv("Seq FI", "skip")
+
     else:
         for name, mdl in seq_models.items():
             tfi = time.time()
@@ -1177,4 +1411,7 @@ log_kv("Buildings", fi_df[["dataset", "building"]].drop_duplicates().shape[0] if
 log_kv("Models", sorted(fi_df["model"].unique()) if len(fi_df) else "none")
 log_kv("Total runtime s", f"{time.time() - t_global:.2f}")
 
-display(fi_df.head(20))
+try:
+    display(fi_df.head(20))
+except NameError:
+    print(fi_df.head(20).to_string(index=False))

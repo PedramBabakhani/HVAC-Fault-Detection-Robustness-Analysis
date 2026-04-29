@@ -1,0 +1,865 @@
+source_dataset,building,label_mode,split_mode,corrupt_where,model,manipulation,level,accuracy,macro_precision,macro_recall,macro_f1,runtime_s,n_classes,train_rows,val_rows,test_rows,scored_rows,n_test_classes_missing_in_train,missing_test_classes_in_train
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.0,0.0,0.0,0.0,0.00423884391784668,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,clean,0.0,0.0,0.0,0.0,0.0,0.13770413398742676,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.0,0.0,0.0,0.0,0.09190106391906738,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,clean,0.0,0.0,0.0,0.0,0.0,0.01995372772216797,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.0,0.0,0.0,0.0,0.013607025146484375,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,clean,0.0,0.0,0.0,0.0,0.0,0.05586886405944824,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.0,0.0,0.0,0.0,0.0005693435668945312,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,noise,0.01,0.0,0.0,0.0,0.0,0.1369171142578125,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.0,0.0,0.0,0.0,0.08428382873535156,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,noise,0.01,0.0,0.0,0.0,0.0,0.01911783218383789,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.0,0.0,0.0,0.0,0.011389493942260742,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,noise,0.01,0.0,0.0,0.0,0.0,0.055025339126586914,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.0,0.0,0.0,0.0,0.0005242824554443359,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,noise,0.05,0.0,0.0,0.0,0.0,0.13724255561828613,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.0,0.0,0.0,0.0,0.08322882652282715,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,noise,0.05,0.0,0.0,0.0,0.0,0.018942594528198242,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.0,0.0,0.0,0.0,0.011309385299682617,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,noise,0.05,0.0,0.0,0.0,0.0,0.05512070655822754,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.0,0.0,0.0,0.0,0.0005483627319335938,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,noise,0.1,0.0,0.0,0.0,0.0,0.13858270645141602,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.0,0.0,0.0,0.0,0.07487630844116211,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,noise,0.1,0.0,0.0,0.0,0.0,0.019117355346679688,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.0,0.0,0.0,0.0,0.012645721435546875,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,noise,0.1,0.0,0.0,0.0,0.0,0.05627322196960449,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.0,0.0,0.0,0.0,0.0005404949188232422,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,drift,0.01,0.0,0.0,0.0,0.0,0.1364579200744629,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.0,0.0,0.0,0.0,0.07474064826965332,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,drift,0.01,0.0,0.0,0.0,0.0,0.019160747528076172,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.0,0.0,0.0,0.0,0.011306285858154297,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,drift,0.01,0.0,0.0,0.0,0.0,0.05492544174194336,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.0,0.0,0.0,0.0,0.000461578369140625,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,drift,0.05,0.0,0.0,0.0,0.0,0.1369917392730713,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.0,0.0,0.0,0.0,0.087493896484375,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,drift,0.05,0.0,0.0,0.0,0.0,0.019089937210083008,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.0,0.0,0.0,0.0,0.011606693267822266,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,drift,0.05,0.0,0.0,0.0,0.0,0.054915428161621094,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.0,0.0,0.0,0.0,0.0004093647003173828,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,drift,0.1,0.0,0.0,0.0,0.0,0.1381359100341797,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.0,0.0,0.0,0.0,0.08039689064025879,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,drift,0.1,0.0,0.0,0.0,0.0,0.01924419403076172,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.0,0.0,0.0,0.0,0.012737035751342773,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,drift,0.1,0.0,0.0,0.0,0.0,0.056017160415649414,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.0,0.0,0.0,0.0,0.0006644725799560547,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,bias,0.01,0.0,0.0,0.0,0.0,0.13695478439331055,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.0,0.0,0.0,0.0,0.08356380462646484,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,bias,0.01,0.0,0.0,0.0,0.0,0.019146442413330078,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.0,0.0,0.0,0.0,0.011444330215454102,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,bias,0.01,0.0,0.0,0.0,0.0,0.05500912666320801,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.0,0.0,0.0,0.0,0.0004887580871582031,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,bias,0.05,0.0,0.0,0.0,0.0,0.14809656143188477,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.0,0.0,0.0,0.0,0.07949495315551758,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,bias,0.05,0.0,0.0,0.0,0.0,0.019494056701660156,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.0,0.0,0.0,0.0,0.011679649353027344,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,bias,0.05,0.0,0.0,0.0,0.0,0.05505537986755371,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.0,0.0,0.0,0.0,0.0005254745483398438,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,bias,0.1,0.0,0.0,0.0,0.0,0.13746857643127441,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.0,0.0,0.0,0.0,0.08106160163879395,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,bias,0.1,0.0,0.0,0.0,0.0,0.019370317459106445,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.0,0.0,0.0,0.0,0.012436866760253906,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,bias,0.1,0.0,0.0,0.0,0.0,0.05597543716430664,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.0,0.0,0.0,0.0,0.0006203651428222656,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,missing,0.05,0.0,0.0,0.0,0.0,0.14830923080444336,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.0,0.0,0.0,0.0,0.0774528980255127,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,missing,0.05,0.0,0.0,0.0,0.0,0.01914215087890625,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.0,0.0,0.0,0.0,0.011481761932373047,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,missing,0.05,0.0,0.0,0.0,0.0,0.05505633354187012,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.0,0.0,0.0,0.0,0.0005183219909667969,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,missing,0.1,0.0,0.0,0.0,0.0,0.13861680030822754,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.0,0.0,0.0,0.0,0.0719304084777832,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,missing,0.1,0.0,0.0,0.0,0.0,0.018982410430908203,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.0,0.0,0.0,0.0,0.011346578598022461,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,missing,0.1,0.0,0.0,0.0,0.0,0.05499696731567383,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.0,0.0,0.0,0.0,0.0005638599395751953,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,missing,0.2,0.0,0.0,0.0,0.0,0.13871097564697266,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.0,0.0,0.0,0.0,0.07421588897705078,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,missing,0.2,0.0,0.0,0.0,0.0,0.01920342445373535,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.0,0.0,0.0,0.0,0.012657403945922852,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,missing,0.2,0.0,0.0,0.0,0.0,0.055602073669433594,10,23040,2881,4319,4319,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.0,0.0,0.0,0.0,0.00045609474182128906,10,23040,2881,2160,2160,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,sampling,2.0,0.0,0.0,0.0,0.0,0.1378157138824463,10,23040,2881,2160,2160,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.0,0.0,0.0,0.0,0.03759908676147461,10,23040,2881,2160,2160,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.0,0.0,0.0,0.0,0.010320663452148438,10,23040,2881,2160,2160,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.0,0.0,0.0,0.0,0.007109403610229492,10,23040,2881,2160,2160,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,sampling,2.0,0.0,0.0,0.0,0.0,0.02819228172302246,10,23040,2881,2160,2160,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.0,0.0,0.0,0.0,0.0002875328063964844,10,23040,2881,864,864,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,sampling,5.0,0.0,0.0,0.0,0.0,0.12592625617980957,10,23040,2881,864,864,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.0,0.0,0.0,0.0,0.02005290985107422,10,23040,2881,864,864,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.0,0.0,0.0,0.0,0.00432276725769043,10,23040,2881,864,864,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.0,0.0,0.0,0.0,0.0036776065826416016,10,23040,2881,864,864,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,sampling,5.0,0.0,0.0,0.0,0.0,0.011506319046020508,10,23040,2881,864,864,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.0,0.0,0.0,0.0,0.00019860267639160156,10,23040,2881,432,432,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,RF,sampling,10.0,0.0,0.0,0.0,0.0,0.1174321174621582,10,23040,2881,432,432,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.0,0.0,0.0,0.0,0.011811256408691406,10,23040,2881,432,432,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.0,0.0,0.0,0.0,0.0029413700103759766,10,23040,2881,432,432,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.0,0.0,0.0,0.0,0.004672527313232422,10,23040,2881,432,432,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,RTU,raw,episode_blocked_time,test,Informer,sampling,10.0,0.0,0.0,0.0,0.0,0.006968498229980469,10,23040,2881,432,432,3,Lighting Setback Error: Delayed Onset; Lighting Setback Error: Early Termination; No Overnight Lighting Setback
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.0,0.0,0.0,0.0,0.0002968311309814453,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,clean,0.0,0.0,0.0,0.0,0.0,0.12745285034179688,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.0,0.0,0.0,0.0,0.03564000129699707,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,clean,0.0,0.0,0.0,0.0,0.0,0.006982088088989258,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.0,0.0,0.0,0.0,0.005153656005859375,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,clean,0.0,0.0,0.0,0.0,0.0,0.019916534423828125,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.0,0.0,0.0,0.0,0.00038242340087890625,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,noise,0.01,0.0,0.0,0.0,0.0,0.12684321403503418,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.0,0.0,0.0,0.0,0.0270535945892334,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,noise,0.01,0.0,0.0,0.0,0.0,0.006825447082519531,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.0,0.0,0.0,0.0,0.004225969314575195,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,noise,0.01,0.0,0.0,0.0,0.0,0.01934337615966797,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.0,0.0,0.0,0.0,0.0002579689025878906,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,noise,0.05,0.0,0.0,0.0,0.0,0.12671422958374023,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.0,0.0,0.0,0.0,0.026735782623291016,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,noise,0.05,0.0,0.0,0.0,0.0,0.006625175476074219,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.0,0.0,0.0,0.0,0.004158973693847656,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,noise,0.05,0.0,0.0,0.0,0.0,0.019076108932495117,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.0,0.0,0.0,0.0,0.0002930164337158203,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,noise,0.1,0.0,0.0,0.0,0.0,0.13924551010131836,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.0,0.0,0.0,0.0,0.02496647834777832,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,noise,0.1,0.0,0.0,0.0,0.0,0.0068705081939697266,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.0,0.0,0.0,0.0,0.005110502243041992,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,noise,0.1,0.0,0.0,0.0,0.0,0.01963186264038086,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.0,0.0,0.0,0.0,0.0005159378051757812,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,drift,0.01,0.0,0.0,0.0,0.0,0.12633895874023438,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.0,0.0,0.0,0.0,0.024835586547851562,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,drift,0.01,0.0,0.0,0.0,0.0,0.006808280944824219,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.0,0.0,0.0,0.0,0.004120349884033203,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,drift,0.01,0.0,0.0,0.0,0.0,0.019081830978393555,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.0,0.0,0.0,0.0,0.00032591819763183594,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,drift,0.05,0.0,0.0,0.0,0.0,0.12662816047668457,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.0,0.0,0.0,0.0,0.025707006454467773,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,drift,0.05,0.0,0.0,0.0,0.0,0.006623029708862305,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.0,0.0,0.0,0.0,0.004095554351806641,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,drift,0.05,0.0,0.0,0.0,0.0,0.01912999153137207,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.0,0.0,0.0,0.0,0.00026345252990722656,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,drift,0.1,0.0,0.0,0.0,0.0,0.12727952003479004,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.0,0.0,0.0,0.0,0.024019718170166016,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,drift,0.1,0.0,0.0,0.0,0.0,0.006827831268310547,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.0,0.0,0.0,0.0,0.005087614059448242,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,drift,0.1,0.0,0.0,0.0,0.0,0.019769668579101562,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.0,0.0,0.0,0.0,0.0003161430358886719,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,bias,0.01,0.0,0.0,0.0,0.0,0.12726807594299316,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.0,0.0,0.0,0.0,0.023922204971313477,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,bias,0.01,0.0,0.0,0.0,0.0,0.006829023361206055,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.0,0.0,0.0,0.0,0.004042387008666992,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,bias,0.01,0.0,0.0,0.0,0.0,0.019034862518310547,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.0,0.0,0.0,0.0,0.00030875205993652344,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,bias,0.05,0.0,0.0,0.0,0.0,0.1262376308441162,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.0,0.0,0.0,0.0,0.025357484817504883,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,bias,0.05,0.0,0.0,0.0,0.0,0.006541252136230469,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.0,0.0,0.0,0.0,0.004057168960571289,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,bias,0.05,0.0,0.0,0.0,0.0,0.018985986709594727,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.0,0.0,0.0,0.0,0.0002887248992919922,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,bias,0.1,0.0,0.0,0.0,0.0,0.12728309631347656,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.0,0.0,0.0,0.0,0.02751016616821289,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,bias,0.1,0.0,0.0,0.0,0.0,0.006834268569946289,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.0,0.0,0.0,0.0,0.00491786003112793,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,bias,0.1,0.0,0.0,0.0,0.0,0.01967906951904297,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.0,0.0,0.0,0.0,0.00036716461181640625,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,missing,0.05,0.0,0.0,0.0,0.0,0.12632060050964355,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.0,0.0,0.0,0.0,0.0384521484375,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,missing,0.05,0.0,0.0,0.0,0.0,0.0069010257720947266,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.0,0.0,0.0,0.0,0.004206418991088867,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,missing,0.05,0.0,0.0,0.0,0.0,0.01902461051940918,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.0,0.0,0.0,0.0,0.0002951622009277344,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,missing,0.1,0.0,0.0,0.0,0.0,0.12628841400146484,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.0,0.0,0.0,0.0,0.031215190887451172,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,missing,0.1,0.0,0.0,0.0,0.0,0.006744861602783203,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.0,0.0,0.0,0.0,0.004121541976928711,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,missing,0.1,0.0,0.0,0.0,0.0,0.018978357315063477,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.0,0.0,0.0,0.0,0.0003027915954589844,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,missing,0.2,0.0,0.0,0.0,0.0,0.1278705596923828,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.0,0.0,0.0,0.0,0.025269508361816406,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,missing,0.2,0.0,0.0,0.0,0.0,0.006868839263916016,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.0,0.0,0.0,0.0,0.005087137222290039,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,missing,0.2,0.0,0.0,0.0,0.0,0.021425485610961914,7,18720,1440,1440,1440,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.0,0.0,0.0,0.0,0.0005679130554199219,7,18720,1440,720,720,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,sampling,2.0,0.0,0.0,0.0,0.0,0.11695146560668945,7,18720,1440,720,720,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.0,0.0,0.0,0.0,0.013206005096435547,7,18720,1440,720,720,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.0,0.0,0.0,0.0,0.003560304641723633,7,18720,1440,720,720,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.0,0.0,0.0,0.0,0.003396749496459961,7,18720,1440,720,720,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,sampling,2.0,0.0,0.0,0.0,0.0,0.009696483612060547,7,18720,1440,720,720,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.0,0.0,0.0,0.0,0.00021600723266601562,7,18720,1440,288,288,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,sampling,5.0,0.0,0.0,0.0,0.0,0.11628437042236328,7,18720,1440,288,288,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.0,0.0,0.0,0.0,0.010866880416870117,7,18720,1440,288,288,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.0,0.0,0.0,0.0,0.0018863677978515625,7,18720,1440,288,288,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.0,0.0,0.0,0.0,0.0013759136199951172,7,18720,1440,288,288,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,sampling,5.0,0.0,0.0,0.0,0.0,0.004462242126464844,7,18720,1440,288,288,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.0,0.0,0.0,0.0,0.0002067089080810547,7,18720,1440,144,144,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,RF,sampling,10.0,0.0,0.0,0.0,0.0,0.10861039161682129,7,18720,1440,144,144,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.0,0.0,0.0,0.0,0.006953001022338867,7,18720,1440,144,144,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.0,0.0,0.0,0.0,0.0018227100372314453,7,18720,1440,144,144,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.0,0.0,0.0,0.0,0.0038034915924072266,7,18720,1440,144,144,1,Normal
+LBNL_DataFDD,SZCAV,raw,episode_blocked_time,test,Informer,sampling,10.0,0.0,0.0,0.0,0.0,0.0036444664001464844,7,18720,1440,144,144,1,Normal
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.5022577283779089,0.3333333333333333,0.1674192427926363,0.22289017341040462,0.00043082237243652344,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,clean,0.0,0.2914206321639458,0.3333333333333333,0.09714021072131528,0.15043930428545813,0.1378030776977539,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.32650225772837793,0.3333333333333333,0.10883408590945931,0.16409182159378546,0.04709577560424805,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,clean,0.0,0.22924626606460577,0.25,0.05731156651615144,0.09324667985306584,0.012745380401611328,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.5797151788815561,0.3333333333333333,0.1932383929605187,0.2446496628554676,0.009582281112670898,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,clean,0.0,0.5866620354289684,0.3333333333333333,0.19555401180965615,0.24649737302977234,0.03795266151428223,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.4973949287947204,0.3333333333333333,0.16579830959824013,0.22144900641769116,0.000377655029296875,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,noise,0.01,0.2962834317471344,0.3333333333333333,0.09876114391571146,0.15237584851732763,0.13745737075805664,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.32650225772837793,0.3333333333333333,0.10883408590945931,0.16409182159378546,0.04768538475036621,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,noise,0.01,0.2295936088919764,0.25,0.0573984022229941,0.09336158192090395,0.012636661529541016,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.5758944077804793,0.3333333333333333,0.1919648025934931,0.24362647858349865,0.007429838180541992,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,noise,0.01,0.585272664119486,0.3333333333333333,0.19509088803982866,0.24612912649722465,0.0370631217956543,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.46370267453977076,0.3333333333333333,0.1545675581799236,0.21120075937351687,0.00036215782165527344,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,noise,0.05,0.32789162903786034,0.3333333333333333,0.10929720967928679,0.16461766501002703,0.13729047775268555,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.34838485585272666,0.3333333333333333,0.11612828528424222,0.1722479821397905,0.03866410255432129,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,noise,0.05,0.22716220910038207,0.25,0.05679055227509552,0.09255590150014152,0.012618064880371094,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.5661688086141021,0.3333333333333333,0.1887229362047007,0.24099948251644857,0.007401466369628906,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,noise,0.05,0.5828412643278916,0.3333333333333333,0.19428042144263055,0.2454831394923561,0.03700900077819824,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.43487321986800975,0.2,0.08697464397360195,0.12122972645848462,0.00035762786865234375,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,noise,0.1,0.33240708579367834,0.25,0.08310177144841958,0.1247393117831074,0.13826441764831543,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.3515109412990622,0.25,0.08787773532476555,0.13004369056797738,0.04862499237060547,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,noise,0.1,0.22820423758249392,0.25,0.05705105939562348,0.09290158371040724,0.012697696685791016,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.5679055227509552,0.3333333333333333,0.18930184091698507,0.24147097917589722,0.00803375244140625,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,noise,0.1,0.580757207363668,0.3333333333333333,0.19358573578788932,0.24492785468395226,0.0377659797668457,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.390413337964571,0.3333333333333333,0.13013777932152368,0.1871929386293613,0.0003719329833984375,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,drift,0.01,0.2563390065995137,0.25,0.06408475164987842,0.1020182471661598,0.13746309280395508,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.3115665161514415,0.3333333333333333,0.10385550538381383,0.1583686440677966,0.039307594299316406,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,drift,0.01,0.22889892323723515,0.25,0.05722473080930879,0.09313171283210854,0.012937784194946289,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.5727683223341438,0.3333333333333333,0.19092277411138125,0.2427856301531213,0.007422447204589844,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,drift,0.01,0.5192775269190691,0.3333333333333333,0.17309250897302306,0.2278616064624295,0.037059783935546875,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.16776658562000696,0.3333333333333333,0.05592219520666899,0.0957763236168947,0.0003399848937988281,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,drift,0.05,0.15422021535255298,0.25,0.038555053838138245,0.06680710201625037,0.13714075088500977,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.18478638416116708,0.2,0.03695727683223342,0.06238639695104074,0.03665494918823242,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,drift,0.05,0.22820423758249392,0.25,0.05705105939562348,0.09290158371040724,0.012443065643310547,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.5720736366794026,0.3333333333333333,0.19069121222646754,0.24259832081307997,0.007371187210083008,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,drift,0.05,0.41646405001736714,0.3333333333333333,0.13882135000578905,0.1960111165604054,0.037020206451416016,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.1618617575547065,0.3333333333333333,0.053953919184902166,0.09287493771798705,0.0003371238708496094,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,drift,0.1,0.10142410559221952,0.25,0.02535602639805488,0.04604225796278776,0.1388702392578125,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.08787773532476555,0.2,0.01757554706495311,0.03231162196679438,0.03844881057739258,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,drift,0.1,0.21986800972559917,0.3333333333333333,0.07328933657519972,0.12015945330296128,0.012625455856323242,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.5995137200416811,0.3333333333333333,0.19983790668056037,0.24987332609482446,0.00809335708618164,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,drift,0.1,0.2160472386245224,0.3333333333333333,0.07201574620817414,0.11844234980481767,0.03762698173522949,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.2782216047238624,0.3333333333333333,0.09274053490795414,0.1451086956521739,0.000415802001953125,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,bias,0.01,0.16741924279263634,0.25,0.041854810698159085,0.07170484974709908,0.13691473007202148,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.18443904133379646,0.3333333333333333,0.06147968044459882,0.10381231671554253,0.04479503631591797,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,bias,0.01,0.22820423758249392,0.25,0.05705105939562348,0.09290158371040724,0.012637615203857422,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.5599166377214311,0.3333333333333333,0.18663887924047703,0.2392934016180509,0.007371425628662109,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,bias,0.01,0.4904480722473081,0.3333333333333333,0.16348269074910268,0.21937388332168103,0.03716444969177246,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.0,0.0,0.0,0.0,0.00040459632873535156,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,bias,0.05,0.0986453629732546,0.25,0.02466134074331365,0.04489408789124249,0.13718390464782715,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.07328933657519972,0.2,0.014657867315039944,0.027313915857605175,0.038260698318481445,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,bias,0.05,0.21882598124348732,0.25,0.05470649531087183,0.08976916500427472,0.01247096061706543,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.5574852379298367,0.3333333333333333,0.1858284126432789,0.23862622658340768,0.007475852966308594,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,bias,0.05,0.27335880514067384,0.3333333333333333,0.09111960171355794,0.14311693035097292,0.03730058670043945,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.0,0.0,0.0,0.0,0.0004241466522216797,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,bias,0.1,0.048975338659256684,0.25,0.012243834664814171,0.023344370860927152,0.1273660659790039,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.017714484195901353,0.2,0.0035428968391802707,0.0069624573378839595,0.04117870330810547,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,bias,0.1,0.2111844390413338,0.3333333333333333,0.07039481301377794,0.11624127712455788,0.012613534927368164,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.6422368878082667,0.3333333333333333,0.21407896260275558,0.26071630005640156,0.008115530014038086,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,bias,0.1,0.0,0.0,0.0,0.0,0.03790116310119629,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.5029524140326502,0.3333333333333333,0.16765080467755009,0.22309529312071488,0.0004448890686035156,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,missing,0.05,0.290378603681834,0.3333333333333333,0.09679286789394466,0.15002243158366982,0.13807940483093262,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.32511288641889546,0.3333333333333333,0.10837096213963182,0.163564875491481,0.05089426040649414,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,missing,0.05,0.2295936088919764,0.25,0.0573984022229941,0.09336158192090395,0.012636661529541016,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.5793678360541855,0.3333333333333333,0.19312261201806183,0.24455685067077193,0.007457256317138672,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,missing,0.05,0.5866620354289684,0.3333333333333333,0.19555401180965615,0.24649737302977234,0.03719663619995117,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.5026050712052796,0.3333333333333333,0.1675350237350932,0.2229927569733395,0.0003402233123779297,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,missing,0.1,0.2907259465092046,0.3333333333333333,0.09690864883640153,0.15016146393972013,0.13799834251403809,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.32719694338311917,0.3333333333333333,0.10906564779437306,0.16435488092122483,0.036881208419799805,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,missing,0.1,0.22924626606460577,0.25,0.05731156651615144,0.09324667985306584,0.012450695037841797,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.5793678360541855,0.3333333333333333,0.19312261201806183,0.24455685067077193,0.00728154182434082,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,missing,0.1,0.5873567210837096,0.3333333333333333,0.19578557369456986,0.24668125455871626,0.03703618049621582,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.5032997568600208,0.25,0.1258249392150052,0.16739833641404805,0.00033974647521972656,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,missing,0.2,0.2914206321639458,0.3333333333333333,0.09714021072131528,0.15043930428545813,0.12714910507202148,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.3258075720736367,0.3333333333333333,0.10860252402454557,0.1638284865950572,0.037520408630371094,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,missing,0.2,0.22889892323723515,0.25,0.05722473080930879,0.09313171283210854,0.012619256973266602,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.5786731503994442,0.3333333333333333,0.19289105013314808,0.24437110377704438,0.007984399795532227,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,missing,0.2,0.5856200069468566,0.3333333333333333,0.19520666898228553,0.2462212486308872,0.038002967834472656,6,11520,1440,2879,2879,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.5020833333333333,0.3333333333333333,0.1673611111111111,0.22283865002311606,0.0004000663757324219,6,11520,1440,1440,1440,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,sampling,2.0,0.2923611111111111,0.3333333333333333,0.09745370370370371,0.1508149740283002,0.1382591724395752,6,11520,1440,1440,1440,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.32569444444444445,0.3333333333333333,0.10856481481481482,0.16378557709097258,0.03491401672363281,6,11520,1440,1440,1440,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.23055555555555557,0.25,0.05763888888888889,0.09367945823927765,0.0070819854736328125,6,11520,1440,1440,1440,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.5805555555555556,0.3333333333333333,0.19351851851851853,0.2448740480374927,0.0042607784271240234,6,11520,1440,1440,1440,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,sampling,2.0,0.5791666666666667,0.3333333333333333,0.19305555555555556,0.24450307827616535,0.019217491149902344,6,11520,1440,1440,1440,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.5034722222222222,0.3333333333333333,0.16782407407407407,0.22324865280985373,0.00026226043701171875,6,11520,1440,576,576,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,sampling,5.0,0.2899305555555556,0.3333333333333333,0.09664351851851853,0.14984297891431134,0.12961912155151367,6,11520,1440,576,576,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.3229166666666667,0.3333333333333333,0.1076388888888889,0.16272965879265092,0.010253190994262695,6,11520,1440,576,576,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.234375,0.25,0.05859375,0.0949367088607595,0.0029327869415283203,6,11520,1440,576,576,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.5815972222222222,0.5,0.2907986111111111,0.3677277716794731,0.0027930736541748047,6,11520,1440,576,576,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,sampling,5.0,0.5520833333333334,0.3333333333333333,0.1840277777777778,0.2371364653243848,0.0079498291015625,6,11520,1440,576,576,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.5069444444444444,0.3333333333333333,0.16898148148148148,0.22427035330261136,0.00017690658569335938,6,11520,1440,288,288,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,RF,sampling,10.0,0.28125,0.3333333333333333,0.09375,0.14634146341463414,0.1288318634033203,6,11520,1440,288,288,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.3090277777777778,0.3333333333333333,0.10300925925925926,0.15738284703801944,0.00867319107055664,6,11520,1440,288,288,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.2465277777777778,0.25,0.06163194444444445,0.0988857938718663,0.002479076385498047,6,11520,1440,288,288,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.59375,0.5,0.296875,0.37254901960784315,0.002565622329711914,6,11520,1440,288,288,0,
+LBNL_DataFDD,SZVAV,raw,episode_blocked_time,test,Informer,sampling,10.0,0.5243055555555556,0.3333333333333333,0.17476851851851852,0.2293090356871678,0.00510859489440918,6,11520,1440,288,288,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.725399795520747,0.6882736656722959,0.8342426897083379,0.6751987419639961,0.003879547119140625,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,clean,0.0,0.9696174694727907,0.9346951519400191,0.9602721798884959,0.9468601411475326,0.4413430690765381,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.9255579775844441,0.8519723227415372,0.9076591679260091,0.8760099278011908,0.27034759521484375,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,clean,0.0,0.9201180578329057,0.8584661454594398,0.850875438370604,0.8546003491048443,0.20459222793579102,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.8882501591465884,0.793568823865879,0.8560846527443747,0.8187809274597051,0.07913994789123535,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,clean,0.0,0.8704836127240109,0.7662719703224568,0.8068267339123776,0.7836538259279262,0.41184520721435547,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.7254769575030382,0.6883067844584974,0.8342889806468867,0.6752667043469036,0.0014345645904541016,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,noise,0.01,0.9708327706938791,0.9363908326015846,0.9630401276330283,0.94904197129764,0.5003507137298584,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.9154111769131349,0.8344858707970297,0.9003671253699783,0.8617521831628914,0.24680805206298828,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,noise,0.01,0.9198479908948861,0.8577990690266706,0.8507597579371012,0.8542187060490085,0.09850525856018066,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.8875171203148209,0.7924796478491247,0.8557839023824151,0.8179023540545409,0.06905937194824219,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,noise,0.01,0.86897895406933,0.7640971289749154,0.8078702503702296,0.7825749512364377,0.40769386291503906,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.7253419240340284,0.6882940082558425,0.834300647207262,0.675171077150255,0.001154184341430664,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,noise,0.05,0.969810374428519,0.9366154287912749,0.9581636903668069,0.9469488237067112,0.5382366180419922,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.9117266922587242,0.828381184713112,0.8988054629741252,0.8569568841133797,0.24401140213012695,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,noise,0.05,0.9131734794266865,0.8427521598513051,0.8460141861299448,0.8443694734262222,0.0985116958618164,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.8771195432010649,0.7778454531946056,0.850426617589908,0.8053676738212459,0.07127881050109863,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,noise,0.05,0.8639055537336754,0.7568060927087614,0.8055216889319166,0.776783637410454,0.41046595573425293,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.7259399293967862,0.6885057405535351,0.8345667262781793,0.6756745876297567,0.001112222671508789,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,noise,0.1,0.9648720075618743,0.935622197021138,0.9382414166807205,0.9369252365977171,0.47603821754455566,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.9112251393738305,0.8278382597699765,0.8959559900455717,0.8556745277539819,0.2407524585723877,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,noise,0.1,0.8961206813403036,0.8084441039251662,0.8353668480479033,0.820847611757629,0.0980064868927002,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.8602210690792647,0.7564965043475524,0.8392231314651128,0.7851317229906651,0.07086300849914551,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,noise,0.1,0.8416443218426282,0.7281345997814923,0.791193658280817,0.751028750797561,0.41427183151245117,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.7266729682285538,0.6887315779564858,0.834821138788721,0.676274108813835,0.0011191368103027344,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,drift,0.01,0.9570014853681591,0.9260886374050594,0.9176258579123928,0.921786496628487,0.4750232696533203,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.9251721676729875,0.8507674549380793,0.909744605804162,0.8759708172576288,0.23794937133789062,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,drift,0.01,0.8990142556762283,0.8289031689793418,0.7885406899574854,0.8064636857736394,0.0970911979675293,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.8753641081039372,0.7754480265272716,0.8486784309666542,0.8030325788282671,0.06961798667907715,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,drift,0.01,0.8282760084106561,0.7097237933031884,0.7689016949405167,0.7307684129929761,0.41241025924682617,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.7433592468990529,0.6958554187624937,0.8440438107757895,0.6909172330030029,0.001163482666015625,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,drift,0.05,0.8889253264916376,0.8313423363967993,0.7290606070573522,0.765189296364376,0.4676342010498047,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.8932656879955246,0.8098480661405476,0.7995494246779975,0.8045426234098553,0.2456192970275879,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,drift,0.05,0.7747448831960493,0.59955920744663,0.6029636414273017,0.6011776972360854,0.09833383560180664,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.8242057138447887,0.7103155127387502,0.7848559749449893,0.733962864837808,0.06917667388916016,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,drift,0.05,0.86475433553888,0.7801037928509882,0.662429887711769,0.6959040046550706,0.40907883644104004,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.792955111016802,0.7219242693162901,0.8732875951624199,0.7367918923699888,0.0010361671447753906,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,drift,0.1,0.8377090607457706,0.7036370958195826,0.6821167485993225,0.6916790510053679,0.37331628799438477,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.8535851386022106,0.7379048575861432,0.7578578988819644,0.747064250042544,0.2541067600250244,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,drift,0.1,0.6806458457917783,0.487075993315239,0.48423376956135955,0.483876471907922,0.09923410415649414,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.8245336522695268,0.6979983630925959,0.737649089433273,0.713687271410098,0.07244324684143066,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,drift,0.1,0.8533343621597639,0.8156049262135404,0.579260387521209,0.5974602435605848,0.4116380214691162,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.7297980285113524,0.6899791465082106,0.8364642325428568,0.6789756798399957,0.0019114017486572266,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,bias,0.01,0.9444433727502459,0.9207419680826802,0.8719096180951997,0.8938904676436983,0.484574556350708,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.9206389012133722,0.8492125011381005,0.8789906130565699,0.8629962814503156,0.26566147804260254,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,bias,0.01,0.8296649240919,0.6926632815238769,0.6907288951668138,0.6916857742148433,0.0987551212310791,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.8225853122166709,0.7196695325537865,0.8221125926552623,0.7460545709809997,0.07006120681762695,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,bias,0.01,0.8622465711144119,0.752538542563178,0.7786235748104915,0.7642930441683737,0.41022610664367676,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.7591774532687745,0.7029229813356178,0.8521433176357511,0.7048949990338972,0.001798391342163086,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,bias,0.05,0.8173575879164335,0.6492668590511426,0.6100853473765264,0.6233850485105681,0.4470937252044678,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.8262890873666544,0.6995567323635911,0.7365706671200326,0.7144993186685442,0.2539193630218506,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,bias,0.05,0.6692065819170895,0.4003577611079054,0.4014697372989237,0.4009129781578643,0.0989229679107666,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.8008449237060901,0.682021098435956,0.750869779338216,0.7021246696106701,0.06876707077026367,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,bias,0.05,0.7971218580605336,0.4135839538794139,0.47820854067816226,0.44355470636854477,0.4085962772369385,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.8694226354675052,0.7793512369713113,0.9172620633561246,0.8156785797576531,0.0017621517181396484,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,bias,0.1,0.6660815216342908,0.4191871492870081,0.414237715335766,0.41666288017498915,0.33142685890197754,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.6913520708346997,0.4797836033819893,0.47721866037380123,0.47796340209153204,0.2592294216156006,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,bias,0.1,0.6298539709485137,0.3955973617170518,0.3780003721933002,0.3865963348265333,0.09771990776062012,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.7563031694284226,0.596276019170935,0.6159494520000525,0.6031460940358416,0.07068228721618652,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,bias,0.1,0.8132487123594205,0.41500630020475665,0.48788334683485707,0.44850367564922283,0.40737414360046387,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.7253033430428828,0.6882096964096632,0.8341384881837339,0.6751021418541965,0.0016045570373535156,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,missing,0.05,0.9696367599683636,0.9348608511460378,0.9600984012174614,0.9468727634781686,0.48366522789001465,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.9256158490711627,0.8520780156073755,0.9076938861299207,0.8760912171321829,0.2405540943145752,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,missing,0.05,0.9200987673373329,0.8584199422726833,0.8508638656359668,0.8545720922108235,0.09854722023010254,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.8883466116244526,0.79371216243708,0.8562351921203966,0.8189303253873559,0.07068657875061035,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,missing,0.05,0.8704643222284381,0.7662527935368284,0.807093188286248,0.7837363648952445,0.4094686508178711,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.7253033430428828,0.6882096964096632,0.8341384881837339,0.6751021418541965,0.001842498779296875,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,missing,0.1,0.9697910839329462,0.935093931236756,0.9604226723516486,0.9471474583513122,0.48747920989990234,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.925808754026891,0.8524307599321663,0.9078096134762927,0.8763623147763886,0.23676395416259766,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,missing,0.1,0.9199251528771775,0.8579408245553138,0.8508987245784858,0.8543590490516086,0.09893035888671875,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.8879029302262775,0.7930519716159399,0.8558763435209051,0.8183444701813132,0.06906247138977051,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,missing,0.1,0.8700399313258358,0.7655919242475727,0.8063752096100503,0.7830455304355268,0.4066591262817383,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.7252454715561643,0.6881396962185631,0.8340110942769865,0.6750278650944244,0.0018224716186523438,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,missing,0.2,0.9695017264993537,0.9344688449851333,0.9601100677778369,0.9466624141313654,0.4082753658294678,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.9253843631242886,0.8516659779958369,0.9075086754628565,0.875756082398008,0.23973464965820312,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,missing,0.2,0.9192114045409827,0.8563893181220298,0.8501461684369841,0.8532197713702871,0.09778833389282227,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.8879029302262775,0.7930522221417602,0.8557836678180692,0.8183163523824875,0.07159018516540527,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,missing,0.2,0.8695769594320878,0.7649001902839915,0.8062828153844295,0.7825562954397918,0.4130678176879883,2,191520,28801,51839,51839,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.7253472222222223,0.6882854296923304,0.8340972222222223,0.6751971034593652,0.001112222671508789,2,191520,28801,25920,25920,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,sampling,2.0,0.969483024691358,0.9347544079311974,0.9596527777777778,0.9466123903884586,0.251265287399292,2,191520,28801,25920,25920,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.9254243827160494,0.851833656938422,0.9074768518518519,0.8758511059409442,0.1376194953918457,2,191520,28801,25920,25920,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.9192515432098766,0.8573648800726792,0.8484953703703704,0.8528334747442103,0.0506439208984375,2,191520,28801,25920,25920,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.8889274691358025,0.7946986322776695,0.8547453703703705,0.8191680196146933,0.036344289779663086,2,191520,28801,25920,25920,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,sampling,2.0,0.8709490740740741,0.7670823409601971,0.8069212962962963,0.7842165956831507,0.20363473892211914,2,191520,28801,25920,25920,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.7261766975308642,0.6887322585374873,0.8347800925925926,0.6759745446275648,0.0005488395690917969,2,191520,28801,10368,10368,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,sampling,5.0,0.9690393518518519,0.9337786564911056,0.9592013888888888,0.9458720705991015,0.15962791442871094,2,191520,28801,10368,10368,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.9262152777777778,0.8532604664925936,0.9080439814814816,0.876982907918197,0.04883909225463867,2,191520,28801,10368,10368,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.9181134259259259,0.8557841191760529,0.8453125,0.8504127442087108,0.02066969871520996,2,191520,28801,10368,10368,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.8914930555555556,0.7986886533273758,0.8545717592592592,0.8219020830050812,0.015305280685424805,2,191520,28801,10368,10368,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,sampling,5.0,0.8743248456790124,0.7723213639237909,0.8060763888888889,0.7872476672173075,0.07927274703979492,2,191520,28801,10368,10368,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.7256944444444444,0.6882992605480645,0.8340277777777778,0.6754330349217621,0.0003876686096191406,2,191520,28801,5184,5184,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,RF,sampling,10.0,0.9689429012345679,0.9350271141857389,0.9568287037037038,0.94547455405367,0.13862991333007812,2,191520,28801,5184,5184,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.9249614197530864,0.851072942520152,0.9068287037037037,0.875120934299243,0.030568361282348633,2,191520,28801,5184,5184,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.9151234567901234,0.850700682716493,0.8388888888888889,0.8446190518230776,0.010911226272583008,2,191520,28801,5184,5184,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.8917824074074074,0.7992767969799863,0.851736111111111,0.8213493339908744,0.009340763092041016,2,191520,28801,5184,5184,0,
+LBNL_DataFDD,MZVAV_1,raw,episode_blocked_time,test,Informer,sampling,10.0,0.8773148148148148,0.7773200769159259,0.8037037037037038,0.7893457921473386,0.03941798210144043,2,191520,28801,5184,5184,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.48726851851851855,0.5,0.24363425925925927,0.3276264591439689,0.00036907196044921875,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,clean,0.0,0.9923611111111111,0.5,0.49618055555555557,0.49808295573370515,0.12787795066833496,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,clean,0.0,1.0,1.0,1.0,1.0,0.012572050094604492,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,clean,0.0,0.9402777777777778,0.5,0.4701388888888889,0.4846098783106657,0.009578704833984375,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.868287037037037,0.5,0.4341435185185185,0.46475034072605625,0.007912635803222656,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,clean,0.0,0.9476851851851852,0.5,0.4738425925925926,0.4865700023769907,0.03201699256896973,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.48680555555555555,0.5,0.24340277777777777,0.3274170948155068,0.0003223419189453125,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,noise,0.01,0.9912037037037037,0.5,0.49560185185185185,0.4977912113461986,0.1280972957611084,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,noise,0.01,1.0,1.0,1.0,1.0,0.01987481117248535,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,noise,0.01,0.9405092592592592,0.5,0.4702546296296296,0.4846713587021353,0.008941411972045898,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.8675925925925926,0.5,0.4337962962962963,0.4645513138324244,0.0068569183349609375,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,noise,0.01,0.9458333333333333,0.5,0.47291666666666665,0.4860813704496788,0.031885385513305664,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.49421296296296297,0.5,0.24710648148148148,0.3307513555383424,0.00026345252990722656,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,noise,0.05,0.9888888888888889,0.5,0.49444444444444446,0.4972067039106145,0.1365804672241211,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,noise,0.05,1.0,1.0,1.0,1.0,0.013124704360961914,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,noise,0.05,0.9402777777777778,0.5,0.4701388888888889,0.4846098783106657,0.009262323379516602,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.8685185185185185,0.5,0.43425925925925923,0.464816650148662,0.006521940231323242,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,noise,0.05,0.9412037037037037,0.5,0.4706018518518518,0.484855711900787,0.031812191009521484,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.5076388888888889,0.5,0.25381944444444443,0.3367111929986181,0.0002677440643310547,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,noise,0.1,0.9844907407407407,0.5,0.49224537037037036,0.4960923830631051,0.1267530918121338,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,noise,0.1,1.0,1.0,1.0,1.0,0.012817621231079102,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,noise,0.1,0.9361111111111111,0.5,0.46805555555555556,0.4835007173601148,0.016330718994140625,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.8708333333333333,0.5,0.4354166666666667,0.46547884187082406,0.011552095413208008,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,noise,0.1,0.9287037037037037,0.5,0.46435185185185185,0.4815170427268363,0.05468583106994629,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.49560185185185185,0.5,0.24780092592592592,0.33137285249961307,0.00031495094299316406,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,drift,0.01,0.9907407407407407,0.5,0.49537037037037035,0.49767441860465117,0.12685680389404297,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,drift,0.01,1.0,1.0,1.0,1.0,0.020329713821411133,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,drift,0.01,0.9516203703703704,0.5,0.4758101851851852,0.4876052662792077,0.018588542938232422,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.8388888888888889,0.5,0.41944444444444445,0.4561933534743202,0.011798620223999023,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,drift,0.01,0.9534722222222223,0.5,0.47673611111111114,0.4880910060433701,0.053929805755615234,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.5298611111111111,0.5,0.26493055555555556,0.3463458919655016,0.000274658203125,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,drift,0.05,0.9726851851851852,0.5,0.4863425925925926,0.4930767425486975,0.12626910209655762,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,drift,0.05,1.0,1.0,1.0,1.0,0.020439624786376953,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,drift,0.05,0.9833333333333333,0.5,0.49166666666666664,0.4957983193277311,0.018303871154785156,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.7407407407407407,0.5,0.37037037037037035,0.425531914893617,0.010928630828857422,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,drift,0.05,0.9247685185185185,0.5,0.46238425925925924,0.48045700541190617,0.053801774978637695,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.5898148148148148,0.5,0.2949074074074074,0.3709959231217239,0.0002486705780029297,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,drift,0.1,0.9689814814814814,0.5,0.4844907407407407,0.4921232071478956,0.13935065269470215,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,drift,0.1,1.0,1.0,1.0,1.0,0.017584562301635742,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,drift,0.1,0.9979166666666667,0.5,0.49895833333333334,0.4994786235662148,0.018700838088989258,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.6523148148148148,0.5,0.3261574074074074,0.3947884561501821,0.011829614639282227,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,drift,0.1,0.8944444444444445,0.5,0.44722222222222224,0.47214076246334313,0.054602622985839844,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.5069444444444444,0.5,0.2534722222222222,0.33640552995391704,0.0004048347473144531,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,bias,0.01,0.9916666666666667,0.5,0.49583333333333335,0.497907949790795,0.13718128204345703,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,bias,0.01,1.0,1.0,1.0,1.0,0.01709151268005371,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,bias,0.01,0.9567129629629629,0.5,0.47835648148148147,0.48893883828226664,0.018583297729492188,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.812037037037037,0.5,0.4060185185185185,0.4481349003576903,0.01128530502319336,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,bias,0.01,0.9532407407407407,0.5,0.47662037037037036,0.48803033894287745,0.05408477783203125,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.5831018518518518,0.5,0.2915509259259259,0.3683287030267583,0.000331878662109375,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,bias,0.05,0.9708333333333333,0.5,0.48541666666666666,0.492600422832981,0.12646794319152832,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.9997685185185186,0.5,0.4998842592592593,0.4999421229308948,0.011057615280151367,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,bias,0.05,0.9877314814814815,0.5,0.49386574074074074,0.4969139396762548,0.018422365188598633,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.6513888888888889,0.5,0.32569444444444445,0.39444911690496215,0.011219501495361328,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,bias,0.05,0.9104166666666667,0.5,0.4552083333333333,0.4765539803707743,0.05377602577209473,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.7097222222222223,0.5,0.3548611111111111,0.4151096669374492,0.00032138824462890625,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,bias,0.1,1.0,1.0,1.0,1.0,0.12703967094421387,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.9997685185185186,0.5,0.4998842592592593,0.4999421229308948,0.012686491012573242,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,bias,0.1,0.9990740740740741,0.5,0.49953703703703706,0.4997684113015285,0.018595218658447266,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.506712962962963,0.5,0.2533564814814815,0.33630357965893376,0.012493371963500977,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,bias,0.1,0.8520833333333333,0.5,0.42604166666666665,0.46006749156355453,0.054447174072265625,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.48726851851851855,0.5,0.24363425925925927,0.3276264591439689,0.0003807544708251953,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,missing,0.05,0.9921296296296296,0.5,0.4960648148148148,0.4980246339762956,0.12667608261108398,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,missing,0.05,1.0,1.0,1.0,1.0,0.011811017990112305,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,missing,0.05,0.9402777777777778,0.5,0.4701388888888889,0.4846098783106657,0.01869511604309082,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.868287037037037,0.5,0.4341435185185185,0.46475034072605625,0.011699438095092773,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,missing,0.05,0.9476851851851852,0.5,0.4738425925925926,0.4865700023769907,0.05414843559265137,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.48657407407407405,0.5,0.24328703703703702,0.3273123637496107,0.0003998279571533203,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,missing,0.1,0.9925925925925926,0.5,0.4962962962962963,0.49814126394052044,0.12705063819885254,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.9997685185185186,0.5,0.4998842592592593,0.4999421229308948,0.01192474365234375,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,missing,0.1,0.9409722222222222,0.5,0.4704861111111111,0.4847942754919499,0.018562793731689453,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.8685185185185185,0.5,0.43425925925925923,0.464816650148662,0.011221885681152344,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,missing,0.1,0.9481481481481482,0.5,0.4740740740740741,0.4866920152091255,0.053948402404785156,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.4875,0.5,0.24375,0.3277310924369748,0.00034689903259277344,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,missing,0.2,0.9918981481481481,0.5,0.49594907407407407,0.4979662986635677,0.1372232437133789,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.999537037037037,0.5,0.4997685185185185,0.4998842324612179,0.011655807495117188,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,missing,0.2,0.9400462962962963,0.5,0.47002314814814816,0.48454838324782246,0.018699169158935547,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.8701388888888889,0.5,0.43506944444444445,0.46528035647976235,0.012260913848876953,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,missing,0.2,0.9456018518518519,0.5,0.47280092592592593,0.4860202260559191,0.05499458312988281,2,15120,2160,4320,4320,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.48657407407407405,0.5,0.24328703703703702,0.3273123637496107,0.0003056526184082031,2,15120,2160,2160,2160,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,sampling,2.0,0.9930555555555556,0.5,0.4965277777777778,0.49825783972125437,0.11687707901000977,2,15120,2160,2160,2160,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,sampling,2.0,1.0,1.0,1.0,1.0,0.011040210723876953,2,15120,2160,2160,2160,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.9407407407407408,0.5,0.4703703703703704,0.4847328244274809,0.009716272354125977,2,15120,2160,2160,2160,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.8675925925925926,0.5,0.4337962962962963,0.4645513138324244,0.0059168338775634766,2,15120,2160,2160,2160,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,sampling,2.0,0.9490740740740741,0.5,0.47453703703703703,0.48693586698337293,0.027559518814086914,2,15120,2160,2160,2160,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.4895833333333333,0.5,0.24479166666666666,0.32867132867132864,0.00019598007202148438,2,15120,2160,864,864,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,sampling,5.0,0.9930555555555556,0.5,0.4965277777777778,0.49825783972125437,0.10794496536254883,2,15120,2160,864,864,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,sampling,5.0,1.0,1.0,1.0,1.0,0.0033369064331054688,2,15120,2160,864,864,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.9398148148148148,0.5,0.4699074074074074,0.48448687350835323,0.0039594173431396484,2,15120,2160,864,864,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.8738425925925926,0.5,0.4369212962962963,0.4663372452130945,0.003414154052734375,2,15120,2160,864,864,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,sampling,5.0,0.9513888888888888,0.5,0.4756944444444444,0.4875444839857651,0.011223554611206055,2,15120,2160,864,864,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.4861111111111111,0.5,0.24305555555555555,0.32710280373831774,0.0002155303955078125,2,15120,2160,432,432,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,RF,sampling,10.0,0.9930555555555556,0.5,0.4965277777777778,0.49825783972125437,0.10956716537475586,2,15120,2160,432,432,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,XGBoost,sampling,10.0,1.0,1.0,1.0,1.0,0.0030603408813476562,2,15120,2160,432,432,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.9375,0.5,0.46875,0.4838709677419355,0.002688169479370117,2,15120,2160,432,432,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.8773148148148148,0.5,0.4386574074074074,0.46732429099876693,0.0034716129302978516,2,15120,2160,432,432,0,
+LBNL_DataFDD,MZVAV_2_1,raw,episode_blocked_time,test,Informer,sampling,10.0,0.9467592592592593,0.5,0.47337962962962965,0.4863258026159334,0.006798267364501953,2,15120,2160,432,432,0,
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.0,0.0,0.0,0.0,0.0014684200286865234,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,clean,0.0,0.0,0.0,0.0,0.0,0.16253137588500977,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.0,0.0,0.0,0.0,0.1456742286682129,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,clean,0.0,0.0,0.0,0.0,0.0,0.03614997863769531,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.0,0.0,0.0,0.0,0.04305148124694824,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,clean,0.0,0.0,0.0,0.0,0.0,0.22080707550048828,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.0,0.0,0.0,0.0,0.0016148090362548828,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,noise,0.01,0.0,0.0,0.0,0.0,0.16364693641662598,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.0,0.0,0.0,0.0,0.13127875328063965,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,noise,0.01,0.0,0.0,0.0,0.0,0.04206490516662598,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.0,0.0,0.0,0.0,0.027572154998779297,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,noise,0.01,0.0,0.0,0.0,0.0,0.14931964874267578,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.0,0.0,0.0,0.0,0.001226663589477539,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,noise,0.05,0.0,0.0,0.0,0.0,0.1748645305633545,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.0,0.0,0.0,0.0,0.13712048530578613,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,noise,0.05,0.0,0.0,0.0,0.0,0.036472320556640625,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.0,0.0,0.0,0.0,0.025476455688476562,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,noise,0.05,0.0,0.0,0.0,0.0,0.14906001091003418,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.0,0.0,0.0,0.0,0.0015213489532470703,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,noise,0.1,0.0,0.0,0.0,0.0,0.18195223808288574,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.0,0.0,0.0,0.0,0.14762544631958008,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,noise,0.1,0.0,0.0,0.0,0.0,0.036705970764160156,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.0,0.0,0.0,0.0,0.026623249053955078,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,noise,0.1,0.0,0.0,0.0,0.0,0.14929413795471191,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.0,0.0,0.0,0.0,0.0011811256408691406,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,drift,0.01,0.0,0.0,0.0,0.0,0.16571354866027832,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.0,0.0,0.0,0.0,0.13030290603637695,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,drift,0.01,0.0,0.0,0.0,0.0,0.03650617599487305,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.0,0.0,0.0,0.0,0.02578449249267578,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,drift,0.01,0.0,0.0,0.0,0.0,0.14913034439086914,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.0,0.0,0.0,0.0,0.0011820793151855469,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,drift,0.05,0.0,0.0,0.0,0.0,0.16182804107666016,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.0,0.0,0.0,0.0,0.14292240142822266,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,drift,0.05,0.0,0.0,0.0,0.0,0.03686380386352539,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.0,0.0,0.0,0.0,0.026656150817871094,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,drift,0.05,0.0,0.0,0.0,0.0,0.14995074272155762,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.0,0.0,0.0,0.0,0.0011060237884521484,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,drift,0.1,0.0,0.0,0.0,0.0,0.16215014457702637,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.0,0.0,0.0,0.0,0.13950657844543457,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,drift,0.1,0.0,0.0,0.0,0.0,0.037288665771484375,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.0,0.0,0.0,0.0,0.02745819091796875,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,drift,0.1,0.0,0.0,0.0,0.0,0.14917802810668945,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.0,0.0,0.0,0.0,0.001922607421875,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,bias,0.01,0.0,0.0,0.0,0.0,0.16277480125427246,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.0,0.0,0.0,0.0,0.1313035488128662,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,bias,0.01,0.0,0.0,0.0,0.0,0.03643083572387695,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.0,0.0,0.0,0.0,0.026205778121948242,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,bias,0.01,0.0,0.0,0.0,0.0,0.15017390251159668,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.0,0.0,0.0,0.0,0.001340627670288086,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,bias,0.05,0.0,0.0,0.0,0.0,0.17128992080688477,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.0,0.0,0.0,0.0,0.14180707931518555,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,bias,0.05,0.0,0.0,0.0,0.0,0.03651237487792969,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.0,0.0,0.0,0.0,0.026314258575439453,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,bias,0.05,0.0,0.0,0.0,0.0,0.15005898475646973,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.0,0.0,0.0,0.0,0.001394510269165039,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,bias,0.1,0.0,0.0,0.0,0.0,0.1486353874206543,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.0,0.0,0.0,0.0,0.13257765769958496,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,bias,0.1,0.0,0.0,0.0,0.0,0.036545515060424805,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.0,0.0,0.0,0.0,0.02617931365966797,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,bias,0.1,0.0,0.0,0.0,0.0,0.14825224876403809,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.0,0.0,0.0,0.0,0.0014984607696533203,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,missing,0.05,0.0,0.0,0.0,0.0,0.17544317245483398,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.0,0.0,0.0,0.0,0.13257813453674316,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,missing,0.05,0.0,0.0,0.0,0.0,0.03734135627746582,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.0,0.0,0.0,0.0,0.0258944034576416,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,missing,0.05,0.0,0.0,0.0,0.0,0.1483161449432373,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.0,0.0,0.0,0.0,0.00165557861328125,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,missing,0.1,0.0,0.0,0.0,0.0,0.16439437866210938,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.0,0.0,0.0,0.0,0.13213038444519043,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,missing,0.1,0.0,0.0,0.0,0.0,0.03679466247558594,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.0,0.0,0.0,0.0,0.026053667068481445,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,missing,0.1,0.0,0.0,0.0,0.0,0.14999079704284668,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.0,0.0,0.0,0.0,0.0012960433959960938,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,missing,0.2,0.0,0.0,0.0,0.0,0.16377043724060059,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.0,0.0,0.0,0.0,0.13279175758361816,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,missing,0.2,0.0,0.0,0.0,0.0,0.03631877899169922,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.0,0.0,0.0,0.0,0.026584625244140625,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,missing,0.2,0.0,0.0,0.0,0.0,0.14972853660583496,4,17280,1440,18720,18720,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.0,0.0,0.0,0.0,0.0010175704956054688,4,17280,1440,9360,9360,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,sampling,2.0,0.0,0.0,0.0,0.0,0.14840030670166016,4,17280,1440,9360,9360,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.0,0.0,0.0,0.0,0.07748603820800781,4,17280,1440,9360,9360,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.0,0.0,0.0,0.0,0.018799781799316406,4,17280,1440,9360,9360,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.0,0.0,0.0,0.0,0.014250755310058594,4,17280,1440,9360,9360,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,sampling,2.0,0.0,0.0,0.0,0.0,0.07262659072875977,4,17280,1440,9360,9360,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.0,0.0,0.0,0.0,0.0004601478576660156,4,17280,1440,3744,3744,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,sampling,5.0,0.0,0.0,0.0,0.0,0.1377875804901123,4,17280,1440,3744,3744,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.0,0.0,0.0,0.0,0.029178619384765625,4,17280,1440,3744,3744,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.0,0.0,0.0,0.0,0.007996320724487305,4,17280,1440,3744,3744,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.0,0.0,0.0,0.0,0.006615161895751953,4,17280,1440,3744,3744,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,sampling,5.0,0.0,0.0,0.0,0.0,0.027489423751831055,4,17280,1440,3744,3744,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.0,0.0,0.0,0.0,0.00034356117248535156,4,17280,1440,1872,1872,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,RF,sampling,10.0,0.0,0.0,0.0,0.0,0.1274406909942627,4,17280,1440,1872,1872,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.0,0.0,0.0,0.0,0.016419410705566406,4,17280,1440,1872,1872,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.0,0.0,0.0,0.0,0.004450559616088867,4,17280,1440,1872,1872,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.0,0.0,0.0,0.0,0.004891157150268555,4,17280,1440,1872,1872,1,Normal
+LBNL_DataFDD,MZVAV_2_2,raw,episode_blocked_time,test,Informer,sampling,10.0,0.0,0.0,0.0,0.0,0.014443159103393555,4,17280,1440,1872,1872,1,Normal
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.4951250716901222,0.3060662369176018,0.44733615485815176,0.21157874880423402,0.003744840621948242,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,clean,0.0,0.6212114527727534,0.7223112091479746,0.5101261161638221,0.49260545394620425,0.24444079399108887,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.7036220055587418,0.7449933527461902,0.7729827006079465,0.6570813252752862,0.3880743980407715,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,clean,0.0,0.6688136939162659,0.37966302413222813,0.51121276022469,0.33343705223080666,0.09383249282836914,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.6952838928839282,0.3877641623132146,0.5206597601370843,0.3562545202660898,0.05506277084350586,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,clean,0.0,0.7907971941589095,0.5723117033794113,0.7772408340194634,0.6003475272142452,0.26523613929748535,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.49508095469184277,0.30776022046013735,0.4636367105660887,0.21478099074508944,0.0022079944610595703,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,noise,0.01,0.615829178982662,0.7167047608410011,0.45478308125296724,0.4618837799508769,0.31476545333862305,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.7071954824193761,0.7330923770382232,0.753185462244461,0.6496772516312606,0.38547325134277344,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,noise,0.01,0.669122512904222,0.38008554229092967,0.5116862264978949,0.3339052584400976,0.043096303939819336,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.6951074248908105,0.38703935408624374,0.520187443833582,0.35563543359367805,0.02974700927734375,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,noise,0.01,0.7903119071778356,0.5721628245031702,0.7763998892184457,0.5994978234357209,0.18236708641052246,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.4434640667049014,0.3032167478623299,0.404679324119824,0.196274735277036,0.0021910667419433594,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,noise,0.05,0.6114615961529978,0.7160626926310656,0.410032985430377,0.41890640125964274,0.3163425922393799,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.7005338156791812,0.6697796847539671,0.6606510310190915,0.5831983464873023,0.42714524269104004,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,noise,0.05,0.6690342789076631,0.38012581271955204,0.5110931780880948,0.3340027803310039,0.043253421783447266,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.6939162659372656,0.38711011031753645,0.5178416138484944,0.35463281064120966,0.030315876007080078,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,noise,0.05,0.7875325362862311,0.5593174488695585,0.7572409528234502,0.5839758176721814,0.18140029907226562,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.3742003794061852,0.3062855866106445,0.4062151156463606,0.18575673337734047,0.002248525619506836,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,noise,0.1,0.6092116292407465,0.6901119904153569,0.4079302178347891,0.41530059011850357,0.2478199005126953,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.6973573918030617,0.6545118546403031,0.6678833607272479,0.580255555965476,0.41409802436828613,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,noise,0.1,0.6685931089248688,0.38049239250564965,0.5206228227286056,0.3357089125397332,0.04312396049499512,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.695063307892531,0.3899893390555337,0.5331424571576999,0.35930313728423663,0.04354238510131836,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,noise,0.1,0.7810473375391538,0.5482824485804871,0.7596303015696868,0.5770889447286482,0.22326183319091797,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.4889045749327216,0.30447191412889996,0.4442801582677697,0.20686365411014257,0.0023009777069091797,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,drift,0.01,0.6145497860325584,0.7368134657789668,0.395836100925594,0.39372740379074483,0.30858540534973145,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.6921515860060882,0.7419348302788353,0.7380603627156491,0.6341848705266534,0.39479589462280273,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,drift,0.01,0.6659902060263819,0.37969750619249476,0.5148583451359154,0.33292333471751007,0.04892897605895996,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.6930780429699563,0.38923547695620936,0.531876144732708,0.35773220754726104,0.03289031982421875,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,drift,0.01,0.7780914986544315,0.565697534628406,0.7699341300834944,0.5907944720936775,0.17830753326416016,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.4642431728945163,0.29763674617105484,0.39889115836441047,0.18515026586339917,0.0022401809692382812,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,drift,0.05,0.5974765076984162,0.6184426801070371,0.30268690519277364,0.3196294880033763,0.3091576099395752,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.6511227776062116,0.6680333440848952,0.6011700811780927,0.5099069858122898,0.3990600109100342,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,drift,0.05,0.6536374465081396,0.3804293890642608,0.5112775967349842,0.3293320930471391,0.04352283477783203,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.685975206246967,0.4017857634656697,0.5297731733272718,0.36705849010411234,0.03050374984741211,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,drift,0.05,0.7131071601888207,0.5386052366045465,0.7356737839767866,0.5439798934694714,0.1807267665863037,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.43697886795782415,0.29700160321624974,0.3790272007216168,0.16992484720033477,0.0021567344665527344,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,drift,0.1,0.5871972470993073,0.6019972181427296,0.22631438787350752,0.23411730157000998,0.23800206184387207,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.6396082410552786,0.5439773430552491,0.43388902572868443,0.3814388446099465,0.38806676864624023,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,drift,0.1,0.6319318833546566,0.3819509413627123,0.4944661011586594,0.3211043794933302,0.043734073638916016,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.6504169056337407,0.4106230973405188,0.49739529283680994,0.35862358832939895,0.031146764755249023,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,drift,0.1,0.6542550844840517,0.5204572234867809,0.7266493136882916,0.5115968610133123,0.25783348083496094,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.48462522609961617,0.30363650820862,0.43786771550159626,0.20389841919028612,0.0027129650115966797,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,bias,0.01,0.6060793223629064,0.7248766290164443,0.3464118266099868,0.36507185342845455,0.30475401878356934,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.669122512904222,0.6791902786310103,0.6807150335759251,0.5681818037897133,0.3859713077545166,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,bias,0.01,0.6642696430934839,0.379818407190915,0.5125652481667561,0.33230482297602554,0.04357147216796875,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.6916221820267349,0.39093532040040774,0.5316828346537862,0.3579448473704873,0.030498743057250977,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,bias,0.01,0.7712092469228393,0.5588425605291388,0.7745605994098462,0.5834885718362497,0.18120431900024414,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.4482287025190806,0.299291680481699,0.39238456237184327,0.17743420785826552,0.0022840499877929688,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,bias,0.05,0.5919618829134866,0.6089784760326337,0.2692487363154377,0.2887728721595804,0.31057071685791016,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.6328583403185247,0.644610946965595,0.42670202781434013,0.414714720759659,0.3796195983886719,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,bias,0.05,0.6425199629417214,0.38097642097190665,0.5056697034271387,0.3253309641067628,0.048567771911621094,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.6751665416685049,0.4080354573525238,0.517649194759563,0.3635520497831197,0.03276491165161133,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,bias,0.05,0.6781223805532272,0.51563761407067,0.7383088808830183,0.510518819699571,0.18103504180908203,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.40852340406758725,0.3084606020789754,0.363113342034978,0.1586885630643852,0.0024487972259521484,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,bias,0.1,0.5877266510786606,0.5634128677577136,0.2313855006939657,0.2186196292874424,0.23658442497253418,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.6342700842634668,0.6082618288397991,0.38664547017911816,0.3553010702179276,0.428020715713501,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,bias,0.1,0.6022411435125954,0.393276191587054,0.5109462608197071,0.32298814552052446,0.04333662986755371,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.6164468169585742,0.4239273915506243,0.4569350533453617,0.33896340692473964,0.04616189002990723,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,bias,0.1,0.593020690872193,0.4856088637974523,0.7311089809773287,0.45515064078346246,0.23364853858947754,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.4918604138174439,0.3005264479549288,0.4338751267045034,0.20759019718832045,0.0024063587188720703,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,missing,0.05,0.6167997529448096,0.6591380453555068,0.4907778273385274,0.4614210200293452,0.33579373359680176,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.6934309789561918,0.6526953949937067,0.7406818421839516,0.5890827455623295,0.4340813159942627,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,missing,0.05,0.6659460890281025,0.37688710238017514,0.5068422216334676,0.3307805527019546,0.0450739860534668,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.6895045661093219,0.38446719054021494,0.5121749940052304,0.350578426273107,0.031221628189086914,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,missing,0.05,0.7803855825649623,0.5291619139766324,0.7492004021522825,0.5615961040397288,0.17954373359680176,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.4872722459963824,0.2987267480425238,0.42908742798571214,0.2053131834726106,0.002287149429321289,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,missing,0.1,0.613711563065249,0.6251330368769185,0.4693962004896419,0.4353251687101121,0.3177309036254883,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.6825781973794504,0.5981732558818283,0.7150543262803358,0.5415071208500561,0.381788969039917,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,missing,0.1,0.6601226452552168,0.3721225521496237,0.501965726636494,0.3239251089905046,0.043602943420410156,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.6837693563329951,0.3791112050613937,0.48017287178341705,0.3391503440252466,0.030788421630859375,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,missing,0.1,0.7660475581241453,0.49919717202534436,0.7218869491442002,0.53044550375701,0.17918038368225098,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.4840517051219835,0.29284497151723,0.4127352098725399,0.20112193748460946,0.0023207664489746094,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,missing,0.2,0.6029911324833458,0.5714547963486174,0.43335583946538275,0.39633420811435865,0.24692940711975098,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.6606079322362907,0.5218972176268543,0.6594407045537717,0.46260557647135064,0.37723851203918457,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,missing,0.2,0.6525345215511537,0.3646078800192335,0.4787867745111063,0.31420237724526606,0.04303455352783203,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.6740636167115189,0.371364933681905,0.49787784007511576,0.3306965650573349,0.04644942283630371,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,missing,0.2,0.742003794061852,0.4549430898973063,0.6562782676958133,0.47816863799608206,0.2454698085784912,7,79363,11345,22667,22667,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.49708840656431974,0.30776355972131414,0.44945928836373605,0.214016078736284,0.0017538070678710938,7,79363,11345,11334,11334,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,sampling,2.0,0.6217575436739016,0.71990462808244,0.5069712999659977,0.4894388762818129,0.24590635299682617,7,79363,11345,11334,11334,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.7064584436209634,0.7662642062173193,0.7709732975413963,0.6672847969227763,0.19801115989685059,7,79363,11345,11334,11334,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.6706370213516852,0.38186255983111705,0.5194373559244256,0.3365307550683367,0.021843433380126953,7,79363,11345,11334,11334,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.6947238397741309,0.387425633341011,0.4983617527797661,0.3522412732397626,0.01694631576538086,7,79363,11345,11334,11334,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,sampling,2.0,0.7874536791953415,0.5493367481054119,0.7469411104174943,0.5716969974297441,0.08802103996276855,7,79363,11345,11334,11334,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.4883105425672695,0.301650928392703,0.4227766019238647,0.20479259965205995,0.0005078315734863281,7,79363,11345,4534,4534,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,sampling,5.0,0.6265990295544773,0.7074134691071651,0.5170401104448727,0.48862977773536176,0.14679718017578125,7,79363,11345,4534,4534,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.7040141155712395,0.7724397991564091,0.7305796177716245,0.6449079849694074,0.07983183860778809,7,79363,11345,4534,4534,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.6561535068372298,0.37486784332110173,0.49375896093460553,0.3235076750393316,0.00977325439453125,7,79363,11345,4534,4534,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.6949713277459197,0.3863861653886245,0.468700669185758,0.3413449545370252,0.007678985595703125,7,79363,11345,4534,4534,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,sampling,5.0,0.7834142037935597,0.5379598826715243,0.7297968184381375,0.5626369553376804,0.033881425857543945,7,79363,11345,4534,4534,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.48963387737097486,0.3000362024429288,0.43159119152569153,0.2056358889556687,0.0003771781921386719,7,79363,11345,2267,2267,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,RF,sampling,10.0,0.6281429201588001,0.7132577161771055,0.544272320799691,0.4885678838097459,0.13696551322937012,7,79363,11345,2267,2267,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.7048963387737097,0.7945782331808796,0.7496672237587446,0.6680945097612115,0.04597783088684082,7,79363,11345,2267,2267,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.6546096162329069,0.36533198335679373,0.4929056837129927,0.32328167151770165,0.005283355712890625,7,79363,11345,2267,2267,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.6894574327304808,0.38181593775144995,0.49759493389327203,0.3462548374977505,0.005919933319091797,7,79363,11345,2267,2267,0,
+Nature_LCU_Wang,auditorium,raw,episode_blocked_time,test,Informer,sampling,10.0,0.7706219673577415,0.5509626744056938,0.7571913502568853,0.5763606592035903,0.029520273208618164,7,79363,11345,2267,2267,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.8231460480606356,0.38766704887565073,0.4233969404289225,0.38259984997481145,0.004212379455566406,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,clean,0.0,0.95389164824438,0.6912787281143807,0.6825806070874125,0.6825664647990961,0.2611989974975586,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.9936550773736039,0.7721430881221952,0.8025638943839286,0.7818075403163767,0.41381192207336426,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,clean,0.0,0.7930579081852372,0.40599634003651464,0.7254845866655419,0.4193103781461495,0.18156671524047852,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.6927449685624875,0.42680214602255945,0.5477535176297351,0.3563192220163207,0.08707284927368164,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,clean,0.0,0.9655479314403835,0.6509538150414873,0.7944521124854383,0.6949156806305234,0.348034143447876,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.8237776693175619,0.3891065499131824,0.430005002864592,0.3848266422340368,0.0028357505798339844,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,noise,0.01,0.9536045476730499,0.6935620453947047,0.6767578457015125,0.6804407262962524,0.3504304885864258,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.9904969710889725,0.7802505182498667,0.7727927349306389,0.7738482391831915,0.4002394676208496,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,noise,0.01,0.7926559673853751,0.4055583627327298,0.7253913348718549,0.41892064810372787,0.06682729721069336,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.6930033590766845,0.4272003844712752,0.5459360181134906,0.3566542650190837,0.04687237739562988,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,noise,0.01,0.9653756710975855,0.6513616632220314,0.7922856134345265,0.6938375843109039,0.28101277351379395,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.8223995865751773,0.38677659171193157,0.4584834984506915,0.3829017091064536,0.0029735565185546875,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,noise,0.05,0.9525422755591284,0.686388116345398,0.6743384027040078,0.6769960345216287,0.3285341262817383,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.98532916080503,0.7477326391643289,0.7347071851252314,0.7407082395119599,0.404202938079834,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,noise,0.05,0.7934885590422325,0.40596362858903545,0.724412563010272,0.418878985183763,0.07355880737304688,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.6931756194194827,0.4262998908030551,0.5480095247222682,0.3563681054958623,0.05020904541015625,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,noise,0.05,0.9649163101834572,0.6497519590184779,0.7821081802610889,0.6879817761530175,0.28064465522766113,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.8203324624616003,0.38807171166078663,0.4455114751742234,0.3799661814306202,0.003018617630004883,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,noise,0.1,0.9511641928167437,0.6894766217979753,0.6691678057189825,0.674796939851593,0.26944732666015625,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.9791852085785651,0.7536165149211096,0.7349700638685006,0.743290940669504,0.4094400405883789,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,noise,0.1,0.7959002038414057,0.40644073824872207,0.7262797448570533,0.4199969208295336,0.06773591041564941,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.6958456547328529,0.4269470857909884,0.5515478488060754,0.3591809026467544,0.05411863327026367,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,noise,0.1,0.9639975883552008,0.6436009166944042,0.7816861949196265,0.684379407929361,0.29482030868530273,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.8221986161752461,0.3875847739854564,0.421394103146986,0.3813422517325916,0.0026912689208984375,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,drift,0.01,0.9543510091585082,0.7009339666127146,0.6790859887542234,0.685361997666216,0.327700138092041,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.9905256811461055,0.7781800430576664,0.7896922842882363,0.7791985250496516,0.43895864486694336,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,drift,0.01,0.7921678964141139,0.40785240661953415,0.7236392042987786,0.41946810078905694,0.06777119636535645,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.672820188912176,0.42473890708669987,0.5317638903574134,0.342883410317094,0.04788517951965332,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,drift,0.01,0.9639401682409348,0.6449053099185716,0.7882347443395199,0.6881609175924887,0.27787280082702637,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.819700841204674,0.3884564234629475,0.4126856863472283,0.37592746460579585,0.002773284912109375,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,drift,0.05,0.9532887370445867,0.6697913347666591,0.6620074357901148,0.6607151819100915,0.32463788986206055,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.9766587235508599,0.7656435220678176,0.7609398547614343,0.7615570765059154,0.4072260856628418,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,drift,0.05,0.7880623582440929,0.4109335828315982,0.7101363769175195,0.41416766804931215,0.06734323501586914,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.6063276965921163,0.3981938982218019,0.4800661150563343,0.2869792142572764,0.047891855239868164,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,drift,0.05,0.9593178490425196,0.6345477356355739,0.7795443872583783,0.6774770495381023,0.2794644832611084,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.817805977433895,0.3844988578418239,0.401274642872132,0.3655391477418662,0.002534627914428711,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,drift,0.1,0.9586862277855933,0.7341641790137369,0.6609532247339875,0.6868189678725307,0.25850462913513184,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.9824581550917286,0.7734043612485102,0.7870199083185709,0.7800201839429761,0.4014096260070801,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,drift,0.1,0.7803680629324452,0.4097743839830688,0.6956993370006541,0.4042425522214952,0.06700849533081055,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.5836180413999024,0.3822559790745175,0.46499443543802466,0.2682721003906712,0.04731321334838867,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,drift,0.1,0.954063908587178,0.6241911263382116,0.772315785026098,0.6676652255292326,0.3082454204559326,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.8221124860038471,0.38715208354451097,0.42555487395407887,0.38109189998573606,0.003493070602416992,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,bias,0.01,0.9541787488157102,0.7019786408596886,0.6797096828524157,0.6861039842365787,0.3469533920288086,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.9885733972610605,0.7548337990491472,0.7844123295315883,0.7642854946085651,0.4417686462402344,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,bias,0.01,0.7911917544715914,0.40769295553498086,0.7228660678886161,0.41898836638899395,0.06717729568481445,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.6676523786282335,0.4233738867596676,0.5247929941764846,0.3401696688275551,0.04771065711975098,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,bias,0.01,0.9636530676696047,0.6439623671263572,0.7855126469967529,0.6861796471399344,0.27817344665527344,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.8200740719474032,0.38547467928078794,0.4242278440820373,0.3730494898209261,0.0033719539642333984,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,bias,0.05,0.94131664322012,0.6458583576695254,0.6363385569912708,0.633975870052897,0.33806610107421875,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.9610978725847664,0.7151396779963548,0.6971740002633245,0.7044260299384262,0.41023755073547363,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,bias,0.05,0.7828658379030174,0.41153514745527575,0.7079486686695283,0.41187024787190013,0.06770563125610352,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.5881829404840515,0.3829537114015911,0.46588722264404775,0.2741592980333339,0.048291921615600586,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,bias,0.05,0.9580833165858,0.632564122125651,0.7754858984689703,0.6737110772261559,0.27858853340148926,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.8203324624616003,0.3763905879175361,0.4099422576822844,0.3570346225624069,0.003572702407836914,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,bias,0.1,0.9658350320117137,0.7599093499501614,0.6303843338873425,0.6721064402616719,0.2576282024383545,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.9881714564611983,0.7697059604226792,0.7630518617910884,0.7663250680203341,0.4162306785583496,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,bias,0.1,0.7740231403060492,0.41302433272005334,0.69463886004464,0.4021249652453047,0.0669090747833252,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.5530705406103759,0.37209793204943103,0.4436317127092965,0.2496403264256677,0.05970954895019531,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,bias,0.1,0.9511067727024777,0.618129594417379,0.761561823500695,0.6578746135257623,0.325742244720459,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.8213373144612558,0.384974746722757,0.41790155920700334,0.3791556125530399,0.0029299259185791016,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,missing,0.05,0.9503028911027533,0.669104314523682,0.6589126194922134,0.6592683885044086,0.3269765377044678,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.9866498234331487,0.7284699144517536,0.7786461804408342,0.747123283909478,0.4036228656768799,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,missing,0.05,0.7889523700152163,0.4030878992708547,0.691155723249774,0.4150497066408608,0.06642651557922363,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.693922080904941,0.42498447707539394,0.5181827403740263,0.3544382859267561,0.04725909233093262,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,missing,0.05,0.9604088312135741,0.6241797270711748,0.7475746473208352,0.6666394351920519,0.27968573570251465,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.8201602021188023,0.38354668863218483,0.4130023198539794,0.37741521264925454,0.0033707618713378906,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,missing,0.1,0.9462260629898653,0.6223845827133953,0.6450848081889208,0.6327761882240047,0.3334083557128906,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.9797881197783583,0.6719802720912995,0.7590530894666953,0.704643260577282,0.4032862186431885,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,missing,0.1,0.786253624644713,0.399729649025822,0.7169632316180451,0.41020480425177774,0.06738615036010742,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.6945824122190003,0.417783863165495,0.5075444651178771,0.3488624950259886,0.04795384407043457,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,missing,0.1,0.9552410209296317,0.5894428139283986,0.7359135121374032,0.6391018006478884,0.27854061126708984,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.8151359421205249,0.3765386124790324,0.40501150099684774,0.368894543379816,0.0035202503204345703,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,missing,0.2,0.9363785133932416,0.5769988394191292,0.6026266554967747,0.5890830318985281,0.26894259452819824,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.9637679078981367,0.5983640005563877,0.7034830919026552,0.6335063996796906,0.41092753410339355,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,missing,0.2,0.7771238264764146,0.39604621723855715,0.667631998126347,0.4026228126229485,0.06755542755126953,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.6950991932473946,0.41786938980462773,0.48252833885887386,0.34797942332376663,0.048226356506347656,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,missing,0.2,0.9421779449341104,0.5342729117111908,0.6752513254226344,0.5783354503232288,0.3007206916809082,5,122872,17829,34831,34831,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.823323380799265,0.38988163228604567,0.420240771803285,0.3814280981044706,0.002418994903564453,5,122872,17829,17416,17416,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,sampling,2.0,0.9539503904455673,0.686434662539104,0.662680700307758,0.6688040870204273,0.2595372200012207,5,122872,17829,17416,17416,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.993913642627469,0.7813233879709578,0.8165298206821658,0.7904485053184362,0.21800541877746582,5,122872,17829,17416,17416,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.7962218649517685,0.39975013542133636,0.6731975561602901,0.4127041053201467,0.03454136848449707,5,122872,17829,17416,17416,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.692524115755627,0.42352376819081616,0.4618471785465063,0.3508127437903491,0.025737524032592773,5,122872,17829,17416,17416,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,sampling,2.0,0.9640560404226,0.633727267297045,0.7340162588695476,0.6757219379373345,0.1388692855834961,5,122872,17829,17416,17416,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.8234534232811828,0.3852064130891069,0.41369143002199615,0.3759225077419274,0.0005893707275390625,5,122872,17829,6967,6967,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,sampling,5.0,0.9553609875125592,0.6375243265244633,0.6406297232057612,0.6356750863982973,0.14798927307128906,5,122872,17829,6967,6967,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.9926797760872685,0.7459849461406135,0.766649871466564,0.7547907654255421,0.08270716667175293,5,122872,17829,6967,6967,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.7859911009042629,0.39628278483705737,0.5521264259137222,0.4030651353860252,0.014271736145019531,5,122872,17829,6967,6967,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.6852303717525478,0.40933901731692107,0.4500496321223141,0.34058176409208274,0.010704517364501953,5,122872,17829,6967,6967,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,sampling,5.0,0.9656954212717095,0.611885709267669,0.7130385904709746,0.6541345309477834,0.052780866622924805,5,122872,17829,6967,6967,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.8208955223880597,0.3864836299181581,0.3797046602927606,0.3687989037827474,0.00046944618225097656,5,122872,17829,3484,3484,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,RF,sampling,10.0,0.9552238805970149,0.5396705529467816,0.5530033960777516,0.5459665275382936,0.1389608383178711,5,122872,17829,3484,3484,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.9928243398392652,0.7357655925758371,0.7454942306263976,0.7394861189248866,0.04535269737243652,5,122872,17829,3484,3484,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.796211251435132,0.40149998636164713,0.5364531725032161,0.40409402960636537,0.0076215267181396484,5,122872,17829,3484,3484,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.6834098737083811,0.4310274692761025,0.41720640341541076,0.3414926296227079,0.00751185417175293,5,122872,17829,3484,3484,0,
+Nature_LCU_Wang,office,raw,episode_blocked_time,test,Informer,sampling,10.0,0.96699196326062,0.631335809727694,0.7299021242254913,0.6710857695663712,0.02659463882446289,5,122872,17829,3484,3484,0,
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,clean,0.0,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0008099079132080078,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,clean,0.0,0.9063990912533132,0.3381920220930616,0.39435740747199216,0.3560575627275246,0.15872883796691895,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,clean,0.0,0.8822415751609239,0.3224104172012898,0.2990001297161283,0.30811362239573137,0.15677404403686523,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,clean,0.0,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.05297279357910156,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,clean,0.0,0.8273381294964028,0.21519724962780867,0.20205703606682332,0.18968806118321366,0.032770395278930664,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,clean,0.0,0.8349867474441499,0.2559395102893133,0.20031437679435862,0.18281528619160942,0.16318726539611816,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,noise,0.01,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007264614105224609,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,noise,0.01,0.9067020068156002,0.3402178840540205,0.39570291362432086,0.35785808782031586,0.16265392303466797,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,noise,0.01,0.8564180234759561,0.31014410488731503,0.248424679124772,0.26000200817623503,0.16042590141296387,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,noise,0.01,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.030013084411621094,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,noise,0.01,0.8271866717152594,0.21470777584408704,0.20202076146811104,0.18966186918585692,0.019191503524780273,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,noise,0.01,0.8348352896630065,0.22416816400753362,0.20011184514878896,0.18239744074378383,0.10707688331604004,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,noise,0.05,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007376670837402344,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,noise,0.05,0.8808027262400606,0.3312371933122669,0.3510465065515284,0.33210020980377425,0.16376972198486328,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,noise,0.05,0.8508140855736464,0.3085272452971615,0.23586016830954631,0.2441643935808086,0.15776491165161133,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,noise,0.05,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.023899078369140625,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,noise,0.05,0.8274895872775464,0.2145908567038033,0.2019270536186782,0.18936391722491797,0.016207218170166016,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,noise,0.05,0.8347595607724347,0.22703296703296702,0.20017683637286154,0.1825878549529364,0.10241198539733887,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,noise,0.1,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0008342266082763672,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,noise,0.1,0.8545248012116623,0.3103074782203324,0.283501326587353,0.28773868303710176,0.16012167930603027,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,noise,0.1,0.8407421431276032,0.287354836269883,0.22197617126202313,0.22372861779310096,0.1499943733215332,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,noise,0.1,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.023878097534179688,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,noise,0.1,0.8279439606209769,0.21378716360008093,0.20170336332110023,0.18873510236536256,0.023839950561523438,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,noise,0.1,0.8346081029912912,0.20701780977643044,0.20005743325072062,0.18236982970495214,0.15319490432739258,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,drift,0.01,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007340908050537109,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,drift,0.01,0.8538432411965164,0.31412540995948357,0.33995540030277666,0.3154936560926809,0.15999054908752441,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,drift,0.01,0.871790988262022,0.31418326810872965,0.2853579602655393,0.2956618588649696,0.15816736221313477,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,drift,0.01,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.031247377395629883,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,drift,0.01,0.8273381294964028,0.21519724962780867,0.20205703606682332,0.18968806118321366,0.019798755645751953,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,drift,0.01,0.8349867474441499,0.2559395102893133,0.20031437679435862,0.18281528619160942,0.10905718803405762,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,drift,0.05,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007791519165039062,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,drift,0.05,0.7888678530859523,0.24982570891227418,0.2860960328620188,0.256754844255744,0.15015339851379395,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,drift,0.05,0.8099204846648996,0.2313429691768573,0.21692188908008309,0.21709076499413352,0.15208959579467773,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,drift,0.05,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.023923397064208984,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,drift,0.05,0.8271866717152594,0.21470777584408704,0.20202076146811104,0.18966186918585692,0.01616048812866211,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,drift,0.05,0.8349867474441499,0.2559395102893133,0.20031437679435862,0.18281528619160942,0.10373735427856445,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,drift,0.1,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007619857788085938,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,drift,0.1,0.7837940174176449,0.21215659250303553,0.23138431558635789,0.21601096920699678,0.16146302223205566,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,drift,0.1,0.8129496402877698,0.21665935619945004,0.2064250303914557,0.20124214395943785,0.15018081665039062,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,drift,0.1,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.024920940399169922,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,drift,0.1,0.8271109428246877,0.21446668990037066,0.20200262416875492,0.1896487775490853,0.01730179786682129,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,drift,0.1,0.8349110185535782,0.24203796317344847,0.20021311097157382,0.18260646472559688,0.10358190536499023,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,bias,0.01,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0008487701416015625,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,bias,0.01,0.822415751609239,0.2830942740842297,0.30645709805821747,0.2858030837994856,0.163069486618042,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,bias,0.01,0.8018174933737221,0.16589110849980415,0.19203772558266075,0.17800941492938802,0.1601569652557373,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,bias,0.01,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.02365255355834961,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,bias,0.01,0.8265051117001136,0.2120780487804878,0.20177439725047724,0.18937015429507248,0.016111135482788086,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,bias,0.01,0.8347595607724347,0.21702280821398806,0.20009370784943287,0.1823882376021813,0.1029810905456543,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,bias,0.05,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007686614990234375,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,bias,0.05,0.8071942446043165,0.19192600850618594,0.2505677255172169,0.21541150436241138,0.16034364700317383,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,bias,0.05,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.16428613662719727,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,bias,0.05,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.024573087692260742,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,bias,0.05,0.8263536539189701,0.20936467668188707,0.2014056085580503,0.1886455954402776,0.016486406326293945,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,bias,0.05,0.8349867474441499,0.16700999697061497,0.19998186270064386,0.18201477446246545,0.10389232635498047,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,bias,0.1,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0010225772857666016,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,bias,0.1,0.7940931465354033,0.17943662879828048,0.19554343986746212,0.1860322258652621,0.15027141571044922,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,bias,0.1,0.8282468761832639,0.17301498416014144,0.19861702862823472,0.18179315513684688,0.14963865280151367,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,bias,0.1,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.02435898780822754,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,bias,0.1,0.8265808405906854,0.205550534852539,0.20087812079211784,0.18744683701568265,0.01711249351501465,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,bias,0.1,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.10421419143676758,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,missing,0.05,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0008592605590820312,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,missing,0.05,0.8942824687618326,0.3283202859857912,0.3758536513551655,0.34397375123353974,0.17109131813049316,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,missing,0.05,0.8745929572131769,0.3143936201508192,0.29375999302058353,0.3018183077049059,0.15772008895874023,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,missing,0.05,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.02727222442626953,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,missing,0.05,0.8262021961378265,0.21120904334200735,0.20170184805305275,0.18931821900227178,0.01831221580505371,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,missing,0.05,0.8349867474441499,0.2559395102893133,0.20031437679435862,0.18281528619160942,0.1034078598022461,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,missing,0.1,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0006921291351318359,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,missing,0.1,0.8872396819386597,0.326115202893748,0.36517106491442314,0.33993581725072747,0.15967297554016113,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,missing,0.1,0.8692162059825823,0.30885054093014797,0.2903109031571528,0.29758274013827485,0.15064001083374023,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,missing,0.1,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.026633024215698242,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,missing,0.1,0.8265808405906854,0.21060586646040633,0.20154314897954734,0.18885898758014275,0.017595767974853516,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,missing,0.1,0.8348352896630065,0.23370213195917952,0.20019497367221767,0.1825971600571571,0.10289573669433594,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,missing,0.2,0.000605831124574025,0.00012116622491480499,0.2,0.00024218572617876335,0.0007061958312988281,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,missing,0.2,0.8631578947368421,0.3086951497771739,0.34610002343868623,0.3219932320783029,0.16112804412841797,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,missing,0.2,0.8513441878076486,0.2912896074969133,0.2802946323925279,0.2847219656410009,0.16222381591796875,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,missing,0.2,0.8350624763347217,0.16701249526694434,0.2,0.18202377022119512,0.02404046058654785,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,missing,0.2,0.8254449072321091,0.20574997416919585,0.2010217039189194,0.18814437679967874,0.016699790954589844,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,missing,0.2,0.8345323741007195,0.20337894635302547,0.20003929595136447,0.18236062494852182,0.16584062576293945,6,46235,6608,13205,13205,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,sampling,2.0,0.0006057852491291837,0.00015144631228229593,0.25,0.0003027092477675193,0.0006933212280273438,6,46235,6608,6603,6603,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,sampling,2.0,0.9080720884446464,0.405823147124719,0.47424895104895104,0.4278355235605306,0.1507411003112793,6,46235,6608,6603,6603,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,sampling,2.0,0.8835377858549144,0.4055352636977309,0.37734015984015984,0.38843440195294854,0.08295440673828125,6,46235,6608,6603,6603,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,sampling,2.0,0.8329547175526276,0.2082386793881569,0.25,0.22721639262992646,0.015108823776245117,6,46235,6608,6603,6603,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,sampling,2.0,0.8258367408753596,0.27661501120238985,0.25358391608391606,0.23872282608695652,0.010412216186523438,6,46235,6608,6603,6603,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,sampling,2.0,0.8325003786157807,0.25824492270384963,0.2500679320679321,0.22764200053440312,0.05244708061218262,6,46235,6608,6603,6603,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,sampling,5.0,0.0,0.0,0.0,0.0,0.00033020973205566406,6,46235,6608,2641,2641,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,sampling,5.0,0.9060961756910261,0.41800799511851033,0.5035264774188847,0.4442286107033488,0.13859128952026367,6,46235,6608,2641,2641,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,sampling,5.0,0.878833775085195,0.3981796740414709,0.36646704939488517,0.378460271058932,0.041222572326660156,6,46235,6608,2641,2641,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,sampling,5.0,0.8379401741764483,0.20948504354411207,0.25,0.22795632468067573,0.006437063217163086,6,46235,6608,2641,2641,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,sampling,5.0,0.8352896630064369,0.31297916789846075,0.25776441142659134,0.24623785962983324,0.005072593688964844,6,46235,6608,2641,2641,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,sampling,5.0,0.8375615297235895,0.20946969696969697,0.24988703117939448,0.2279002678755409,0.02133798599243164,6,46235,6608,2641,2641,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LinearSVM,sampling,10.0,0.0,0.0,0.0,0.0,0.0002529621124267578,6,46235,6608,1321,1321,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,RF,sampling,10.0,0.9053747161241483,0.5176409028808027,0.6468444100383602,0.5546799898811029,0.12740540504455566,6,46235,6608,1321,1321,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,XGBoost,sampling,10.0,0.8856926570779712,0.5278032639260561,0.49010506693780714,0.5048404594152957,0.0232546329498291,6,46235,6608,1321,1321,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,LSTM,sampling,10.0,0.8508705526116578,0.28362351753721926,0.3333333333333333,0.3064758009543285,0.0037860870361328125,6,46235,6608,1321,1321,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,CNN-LSTM,sampling,10.0,0.8485995457986374,0.4302382706951609,0.3485256736146416,0.3394779059518944,0.005465030670166016,6,46235,6608,1321,1321,1,Cooling supply temperature fault
+Nature_LCU_Wang,hospital,raw,episode_blocked_time,test,Informer,sampling,10.0,0.8501135503406511,0.28358585858585855,0.3330367734282325,0.30632842334969995,0.017651081085205078,6,46235,6608,1321,1321,1,Cooling supply temperature fault

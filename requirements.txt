@@ -1,6 +1,10 @@
+# PyTorch GPU wheels for CUDA 12.4
+--extra-index-url https://download.pytorch.org/whl/cu124
+
 # Core numerical computing
 numpy>=1.23
 pandas>=1.5
+scipy>=1.10
 
 # Visualization
 matplotlib>=3.6
@@ -8,16 +12,15 @@ seaborn>=0.12
 
 # Machine Learning
 scikit-learn>=1.2
+joblib>=1.2
 
 # Gradient Boosting
-xgboost>=1.7
+xgboost>=2.0
 
-# Deep Learning
+# Deep Learning with GPU support
 torch>=2.0
 
 # Utilities
 tqdm>=4.65
-
-# Optional but recommended for stability
-scipy>=1.10
-joblib>=1.2
+ipykernel>=6.0
+jupyter>=1.0

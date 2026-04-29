@@ -1,0 +1,50 @@
+source_dataset,building,label_mode,tag,class_id,class_name,train_rows,val_rows,test_rows,train_episodes,val_episodes,test_episodes,low_train_support_flag,seen_in_train,seen_in_test
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,0,Condenser Fouling,2879,0,0,2,0,0,0,1,0
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,1,Excessive infiltration,2879,0,0,2,0,0,0,1,0
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,2,HVAC Setback Error: Delayed Onset,1440,0,0,1,0,0,1,1,0
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,3,HVAC Setback Error: Early Termination,1440,0,0,1,0,0,1,1,0
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,4,Lighting Setback Error: Delayed Onset,0,0,1439,0,0,1,1,0,1
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,5,Lighting Setback Error: Early Termination,0,0,1440,0,0,1,1,0,1
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,6,No Overnight HVAC Setback,1440,0,0,1,0,0,1,1,0
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,7,No Overnight Lighting Setback,0,0,1440,0,0,1,1,0,1
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,8,Normal,7202,2881,0,4,1,0,0,1,0
+LBNL_DataFDD,RTU,raw,LBNL_DataFDD__RTU__RAW,9,Thermostat measurement bias,5760,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,0,Leakage of Cooling Coil Valve,2880,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,1,Leakage of Heating Coil Valve,2880,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,2,Leakage of OA Damper,2880,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,3,Normal,0,0,1440,0,0,1,1,0,1
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,4,Stuck Cooling Coil Valve,2880,1440,0,1,1,0,1,1,0
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,5,Stuck Heating Coil Valve,4320,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZCAV,raw,LBNL_DataFDD__SZCAV__RAW,6,Stuck OA Damper,2880,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZVAV,raw,LBNL_DataFDD__SZVAV__RAW,0,Leakage of Cooling Coil Valve,1440,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZVAV,raw,LBNL_DataFDD__SZVAV__RAW,1,Leakage of Heating Coil Valve,1440,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZVAV,raw,LBNL_DataFDD__SZVAV__RAW,2,Normal,2880,0,2879,1,0,1,1,1,1
+LBNL_DataFDD,SZVAV,raw,LBNL_DataFDD__SZVAV__RAW,3,Stuck Cooling Coil Valve,0,1440,0,0,1,0,1,0,0
+LBNL_DataFDD,SZVAV,raw,LBNL_DataFDD__SZVAV__RAW,4,Stuck Heating Coil Valve,2880,0,0,1,0,0,1,1,0
+LBNL_DataFDD,SZVAV,raw,LBNL_DataFDD__SZVAV__RAW,5,Stuck OA Damper,2880,0,0,1,0,0,1,1,0
+LBNL_DataFDD,MZVAV_1,raw,LBNL_DataFDD__MZVAV_1__RAW,0,Normal,53263,11519,8634,18,1,6,0,1,1
+LBNL_DataFDD,MZVAV_1,raw,LBNL_DataFDD__MZVAV_1__RAW,1,Outdoor air temperature sensor bias,138257,17282,43205,17,2,5,0,1,1
+LBNL_DataFDD,MZVAV_2_1,raw,LBNL_DataFDD__MZVAV_2_1__RAW,0,Leakage of Heating Coil Valve,4320,0,0,1,0,0,1,1,0
+LBNL_DataFDD,MZVAV_2_1,raw,LBNL_DataFDD__MZVAV_2_1__RAW,1,Normal,10800,2160,4320,1,1,1,1,1,1
+LBNL_DataFDD,MZVAV_2_2,raw,LBNL_DataFDD__MZVAV_2_2__RAW,0,Leakage of Heating Coil Valve,4320,0,0,1,0,0,1,1,0
+LBNL_DataFDD,MZVAV_2_2,raw,LBNL_DataFDD__MZVAV_2_2__RAW,1,Normal,0,0,18720,0,0,1,1,0,1
+LBNL_DataFDD,MZVAV_2_2,raw,LBNL_DataFDD__MZVAV_2_2__RAW,2,Stuck Cooling Coil Valve,5760,1440,0,2,1,0,0,1,0
+LBNL_DataFDD,MZVAV_2_2,raw,LBNL_DataFDD__MZVAV_2_2__RAW,3,Stuck OA Damper,7200,0,0,2,0,0,0,1,0
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,0,Cooling pump fault,15994,2685,613,5492,1783,472,0,1,1
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,1,Heating pump fault,17364,0,7526,2638,0,1952,0,1,1
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,2,Normal condition,38885,8360,12974,10435,1981,3216,0,1,1
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,3,Return air temperature fault,1360,195,179,956,134,153,0,1,1
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,4,Supply air temperature fault,307,48,49,196,45,36,0,1,1
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,5,Supply fan fault,5187,41,1297,1629,28,770,0,1,1
+Nature_LCU_Wang,auditorium,raw,Nature_LCU_Wang__auditorium__RAW,6,Valve position fault,266,16,29,171,16,16,0,1,1
+Nature_LCU_Wang,office,raw,Nature_LCU_Wang__office__RAW,0,Normal condition,82409,11246,25747,12453,2845,2135,0,1,1
+Nature_LCU_Wang,office,raw,Nature_LCU_Wang__office__RAW,1,Return air temperature fault,6064,548,387,4397,496,317,0,1,1
+Nature_LCU_Wang,office,raw,Nature_LCU_Wang__office__RAW,2,Supply air temperature fault,712,225,94,611,203,74,0,1,1
+Nature_LCU_Wang,office,raw,Nature_LCU_Wang__office__RAW,3,Supply fan fault,33590,5797,8596,11673,2583,2055,0,1,1
+Nature_LCU_Wang,office,raw,Nature_LCU_Wang__office__RAW,4,Valve position fault,97,13,7,96,13,7,0,1,1
+Nature_LCU_Wang,hospital,raw,Nature_LCU_Wang__hospital__RAW,0,Cooling supply temperature fault,0,0,1,0,0,1,1,0,1
+Nature_LCU_Wang,hospital,raw,Nature_LCU_Wang__hospital__RAW,1,Normal condition,36959,5771,11027,7661,824,1901,0,1,1
+Nature_LCU_Wang,hospital,raw,Nature_LCU_Wang__hospital__RAW,2,Return air temperature fault,6029,831,1975,5846,820,1808,0,1,1
+Nature_LCU_Wang,hospital,raw,Nature_LCU_Wang__hospital__RAW,3,Supply air temperature fault,1,0,8,1,0,8,1,1,1
+Nature_LCU_Wang,hospital,raw,Nature_LCU_Wang__hospital__RAW,4,Supply fan fault,1727,0,194,1365,0,152,0,1,1
+Nature_LCU_Wang,hospital,raw,Nature_LCU_Wang__hospital__RAW,5,Valve position fault,1519,6,0,1496,5,0,0,1,0
