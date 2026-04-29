@@ -1,3 +1,8 @@
+# ============================================================
+# HVAC Fault Detection Robustness - Requirements
+# GPU-ready version for Windows/Linux with CUDA 12.4 PyTorch
+# ============================================================
+
 # PyTorch GPU wheels for CUDA 12.4
 --extra-index-url https://download.pytorch.org/whl/cu124
 
